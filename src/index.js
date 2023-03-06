@@ -14,7 +14,7 @@ import Auth from "layouts/Auth.js";
 
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
-// import Admin from "views/Admin.js";
+
 
 
 ReactDOM.render(
@@ -23,10 +23,11 @@ ReactDOM.render(
       {/* add routes with layouts */}
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
+      <Route path="/"  component={Admin} />
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
-      <Route path="/" exact component={Admin} />
+      
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />
     </Switch>
