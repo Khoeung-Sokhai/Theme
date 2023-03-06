@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-// import Logo from "assets/angular.jpg";
 import { Link } from "react-router-dom";
 
 import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
@@ -22,14 +21,16 @@ export default function Sidebar() {
           </button>
           {/* Brand */}
           <Link
-            className=" -center md:block md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm  p-4"
+            className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            <img
-              alt="..."
-              src={require("assets/img/team-2-800x800.jpg").default}
-              className=" rounded-full  h-20 "
-            />
+            
+                      <img
+                        alt="..."
+                        src={require("assets/img/team-2-800x800.jpg").default}
+                        className="shadow-xl rounded-full  align-middle border-none h-20 "
+                      />
+                   
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
@@ -48,7 +49,27 @@ export default function Sidebar() {
             }
           >
             {/* Collapse header */}
-
+            <div className="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200">
+              <div className="flex flex-wrap">
+                <div className="w-6/12">
+                  <Link
+                    className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                    to="/"
+                  >
+                    Notus React
+                  </Link>
+                </div>
+                <div className="w-6/12 flex justify-end">
+                  <button
+                    type="button"
+                    className="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+                    onClick={() => setCollapseShow("hidden")}
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
             {/* Form */}
             <form className="mt-6 mb-4 md:hidden">
               <div className="mb-3 pt-0">
@@ -91,6 +112,7 @@ export default function Sidebar() {
                 </Link>
               </li>
 
+              
               <li className="items-center">
                 <Link
                   className={
@@ -113,27 +135,6 @@ export default function Sidebar() {
                 </Link>
               </li>
 
-              {/* <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/tables") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
-                  }
-                  to="/admin/CurrentMarket"
-                >
-                  <i
-                    className={
-                      "fas fa-table mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/CurrentMarket") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Current Market
-                </Link>
-              </li> */}
               <li className="items-center">
                 <Link
                   className={
@@ -155,28 +156,29 @@ export default function Sidebar() {
                   Tables
                 </Link>
               </li>
-
               <li className="items-center">
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/maps") !== -1
+                    (window.location.href.indexOf("/admin/CurrentMarket") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/admin/maps"
+                  to="/admin/CurrentMarket"
                 >
                   <i
                     className={
-                      "fas fa-map-marked mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/maps") !== -1
+                      "fas fa-people mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/CurrentMarket") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Maps
+                  Current Market
                 </Link>
               </li>
+
+              
             </ul>
 
             {/* Divider */}
@@ -240,6 +242,8 @@ export default function Sidebar() {
             </ul>
 
             {/* Divider */}
+           
+           
           </div>
         </div>
       </nav>
