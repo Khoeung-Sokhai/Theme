@@ -2,15 +2,17 @@ import React from "react";
 
 // components
 
-import CardCurrentMarket from "components/Cards/CardCurrentMarket.js";
+import CardCurrentStock from "components/Cards/CardCurrentStock.js";
 
 export default function CurrentMarket() {
   return (
     <>
       <div className="flex flex-wrap mt-4">
-        
         <div className="w-full mb-12 px-4">
-          <CardCurrentMarket color="dark" />
+          <CardCurrentStock />
+        </div>
+        <div className="w-full mb-12 px-4">
+          <CardCurrentStock color="dark" />
         </div>
       </div>
     </>
