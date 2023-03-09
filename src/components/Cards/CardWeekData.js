@@ -71,7 +71,7 @@ export default function CardTable({ color }) {
                 
                 <th  
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -123,7 +123,7 @@ export default function CardTable({ color }) {
             <tbody>
               {getStocks.map((stock) =>
               <tr key = {stock.id}  >
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
                   {stock.id}.
                 </td>
 

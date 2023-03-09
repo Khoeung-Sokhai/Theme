@@ -40,7 +40,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Top Broker
+                Valuation Ratio
               </h3>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Sell
+                 P/e
                 </th>
                 <th
                   className={
@@ -70,7 +70,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Quality
+                  p/bv
                 </th>
                 <th
                   className={
@@ -80,7 +80,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Price
+                 div yid
                 </th>
                 <th
                   className={
@@ -90,7 +90,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Buy
+                 dpr
                 </th>
                 <th
                   className={
@@ -99,7 +99,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >quality</th>
+                >cash div/shr</th>
               </tr>
               
             </thead>
