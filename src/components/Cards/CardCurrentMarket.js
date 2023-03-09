@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {useState,useEffect} from "react";
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
@@ -58,7 +57,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Project
+                  Stock Symbol
                 </th>
                 <th  
                   className={
@@ -68,7 +67,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Budget
+                  Bid
                 </th>
                 <th
                   className={
@@ -78,7 +77,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Status
+                  Ask
                 </th>
                 <th
                   className={
@@ -88,7 +87,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Users
+                  Last
                 </th>
                 <th
                   className={
@@ -98,7 +97,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Completion
+                  High
                 </th>
                 <th
                   className={
@@ -107,7 +106,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >One More</th>
+                >Trading Vol</th>
               </tr>
               <tr>
                 <th  
@@ -118,7 +117,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Budget
+                  Vol
                 </th>
                 <th
                   className={
@@ -128,7 +127,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Status
+                  Vol
                 </th>
                 <th
                   className={
@@ -138,7 +137,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Users
+                  Chg
                 </th>
                 <th
                   className={
@@ -148,7 +147,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Completion
+                  Low
                 </th>
                 <th
                   className={
@@ -157,7 +156,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >One More</th>
+                >Trading Val</th>
               </tr>
             </thead>
             <tbody  style={{borderTop:"1px solid gray"}}>
@@ -176,7 +175,7 @@ export default function CardTable({ color }) {
                  Lol
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                 200
                 </td>               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                  Haha
@@ -195,7 +194,7 @@ export default function CardTable({ color }) {
                   Lol
                 </td>
                 <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                 200
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                  haha
@@ -215,7 +214,7 @@ export default function CardTable({ color }) {
                  Lol
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                  111
                 </td>               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                  Haha
@@ -234,7 +233,7 @@ export default function CardTable({ color }) {
                   Lol
                 </td>
                 <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                111
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                  haha
@@ -254,7 +253,7 @@ export default function CardTable({ color }) {
                  Lol
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                111
                 </td>               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                  Haha
@@ -273,7 +272,7 @@ export default function CardTable({ color }) {
                   Lol
                 </td>
                 <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  <TableDropdown />
+                111
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                  haha

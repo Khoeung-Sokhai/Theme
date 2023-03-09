@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
@@ -78,7 +77,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Sell
+                 Avg price
                 </th>
                 <th
                   className={
@@ -88,7 +87,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Quality
+                  High
                 </th>
                 <th
                   className={
@@ -98,7 +97,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Price
+                 low
                 </th>
                 <th
                   className={
@@ -108,7 +107,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Buy
+                 % change
                 </th>
                 <th
                   className={
@@ -117,7 +116,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >quality</th>
+                >value day</th>
               </tr>
               
             </thead>
@@ -138,7 +137,7 @@ export default function CardTable({ color }) {
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  <TableDropdown />
+                 111
                 </td>
               </tr>
               )}

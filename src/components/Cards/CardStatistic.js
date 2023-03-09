@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
@@ -170,7 +169,7 @@ export default function CardTable({ color }) {
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  <TableDropdown />
+                  1111
                 </td>
               </tr>
               
