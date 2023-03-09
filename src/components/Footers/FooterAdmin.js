@@ -30,7 +30,7 @@ export default function FooterAdmin() {
                 </li>
                 <li>
                   <a
-                    href="https://www.creative-tim.com/presentation?ref=nr-footer-admin"
+                    href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s"
                     className="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
                   >
                     About Us

@@ -13,7 +13,7 @@ export default function CardBarChart() {
           "April",
           "May",
           "June",
-          "July",
+          "Sep",
         ],
         datasets: [
           {
