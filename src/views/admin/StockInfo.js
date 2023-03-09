@@ -6,12 +6,12 @@ import React from "react";
 
 // components
 
-import CardCompany from "components/Cards/CardCompany.js";
-import CardWeekData from "components/Cards/CardWeekData.js";
-import CardIPO from "components/Cards/CardIPO.js";
-import CardPerformance from "components/Cards/CardPerformance.js";
-import CardStatistic from "components/Cards/CardStatistic.js";
-import CardValuation from "components/Cards/CardValuation.js";
+import CardCompany from "components/Cards/StockInfo/CardCompany.js";
+import CardWeekData from "components/Cards/StockInfo/CardWeekData.js";
+import CardIPO from "components/Cards/StockInfo/CardIPO.js";
+import CardPerformance from "components/Cards/StockInfo/CardPerformance.js";
+import CardStatistic from "components/Cards/StockInfo/CardStatistic.js";
+import CardValuation from "components/Cards/StockInfo/CardValuation.js";
 
 
 export default function CurrentMarket() {

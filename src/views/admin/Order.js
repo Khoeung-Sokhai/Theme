@@ -3,7 +3,8 @@ import React from "react";
 // components
 
 import CardSettings from "components/Cards/CardSettings.js";
-import CardProfile from "components/Cards/CardProfile.js";
+import CardOrderLeft from "components/Cards/CardOrderLeft.js";
+import CardCancel from "components/Cards/CardCancel.js";
 
 export default function Settings() {
   return (
@@ -11,13 +12,13 @@ export default function Settings() {
       <div className="flex flex-wrap">
         
         <div className="w-full lg:w-4/12 px-4">
-          <CardProfile />
+          <CardOrderLeft />
         </div>
         <div className="w-full lg:w-4/12 px-4">
-          <CardSettings />
+          <CardCancel />
         </div>
         <div className="w-full lg:w-4/12 px-4">
-          <CardProfile />
+          <CardOrderRight />
         </div>
       </div>
     </>

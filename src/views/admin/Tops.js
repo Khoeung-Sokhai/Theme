@@ -8,9 +8,9 @@ export default function Tops() {
   return (
     <>
       <div className="flex flex-wrap mt-4">
-        <div className="w-full mb-12 px-4">
+        {/* <div className="w-full mb-12 px-4">
           <CardTop />
-        </div>
+        </div> */}
         <div className="w-full mb-12 px-4">
           <CardTop color="dark" />
         </div>

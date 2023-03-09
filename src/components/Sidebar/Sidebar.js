@@ -27,10 +27,10 @@ export default function Sidebar() {
             to="/"
           >
             
-                      <img
+                      <img style={{marginLeft:"60px", height:"80px"}}
                         alt="..."
                         src={require("assets/img/team-2-800x800.jpg").default}
-                        className="shadow-xl rounded-full  align-middle border-none h-20 "
+                        className="shadow-xl rounded-full  align-middle border-none "
                       />
                    
           </Link>
@@ -97,16 +97,16 @@ export default function Sidebar() {
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/Order") !== -1
+                    (window.location.href.indexOf("/admin/Sell") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/admin/Order"
+                  to="/admin/Sell"
                 >
                   <i
                     className={
                       "fas fa-tv mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/Order") !== -1
+                      (window.location.href.indexOf("/admin/Sell") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
