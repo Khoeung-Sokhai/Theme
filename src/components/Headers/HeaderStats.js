@@ -15,19 +15,19 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="TRAFFIC"
-                  statTitle="350,897"
+                  statSubtitle="Balance"
+                  statTitle="5,000,000"
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
                   statDescripiron="Since last month"
-                  statIconName="far fa-chart-bar"
+                  statIconName="far fa-credit-card"
                   statIconColor="bg-red-500"
                 />
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="NEW USERS"
+                  statSubtitle="BUYes"
                   statTitle="2,356"
                   statArrow="down"
                   statPercent="3.48"

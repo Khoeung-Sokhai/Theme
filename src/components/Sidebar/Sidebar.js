@@ -85,7 +85,7 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin Layout Pages
+              MENU
             </h6>
             {/* Navigation */}
 
@@ -94,21 +94,21 @@ export default function Sidebar() {
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/dashboard") !== -1
+                    (window.location.href.indexOf("/admin/CurrentStock") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/admin/dashboard"
+                  to="/admin/CurrentStock"
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/dashboard") !== -1
+                      "fas fa-cubes mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/CurrentStock") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
-                  Dashboard
+                  Current Stock
                 </Link>
               </li>
 
@@ -156,27 +156,7 @@ export default function Sidebar() {
                   Tables
                 </Link>
               </li>
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/CurrentMarket") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
-                  }
-                  to="/admin/CurrentMarket"
-                >
-                  <i
-                    className={
-                      "fas fa-people mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/CurrentMarket") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Current Market
-                </Link>
-              </li>
+          
 
               
             </ul>
