@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 // components
 
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
+
 
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
@@ -59,7 +59,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 ID
+                 ipo price
                 </th>
                 <th  
                   className={
@@ -69,7 +69,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Sell
+                 no of issued shares
                 </th>
                 <th
                   className={
@@ -79,7 +79,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Quality
+                  no of listed shares
                 </th>
                 <th
                   className={
@@ -89,7 +89,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Price
+                 no of non listed shares
                 </th>
                 <th
                   className={
@@ -99,7 +99,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Buy
+                 1st trading date
                 </th>
                 <th
                   className={
@@ -108,7 +108,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >quality</th>
+                >under writer</th>
               </tr>
               
             </thead>
@@ -131,7 +131,7 @@ export default function CardTable({ color }) {
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  <TableDropdown />
+                 1111
                 </td>
               </tr>
               
