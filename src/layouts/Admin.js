@@ -15,6 +15,8 @@ import Maps from "views/admin/Maps.js";
 import Settings from "views/admin/Settings.js";
 import Tables from "views/admin/Tables.js";
 import CurrentMarket from "views/admin/CurrentMarket.js";
+import Tops from "views/admin/Tops.js";
+import StockInfo from "views/admin/StockInfo.js";
 
 export default function Admin() {
   return (
@@ -31,7 +33,10 @@ export default function Admin() {
             <Route path="/admin/settings" exact component={Settings} />
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/admin/CurrentMarket" exact component={CurrentMarket} />
-            {/* <Redirect from="/admin" to="/admin/dashboard" /> */}
+            <Route path="/admin/CurrentStock" exact component={CurrentStock} />
+            <Route path="/admin/StockInfo" exact component={StockInfo} />
+            <Route path="/admin/Tops" exact component={Tops} />
+            <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />
         </div>
