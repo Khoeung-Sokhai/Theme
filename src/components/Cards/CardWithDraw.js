@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // components
 export default function CardWithDraw({ color }) {
+    const [name, setName] = useState("");
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      alert(`Your withdraw was: ${name}`);} 
   return (
     <>
       <div
@@ -22,6 +27,16 @@ export default function CardWithDraw({ color }) {
               >
                 WithDraw
               </h3>
+              <form onSubmit={handleSubmit}>
+      <label>
+        <input 
+          type="number" style={{backgroundColor:"lightBlue",color:"black",width:"200px",height:"30px",borderRadius:"5px"}}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label> &nbsp;
+      <input type="submit" style={{backgroundColor:"green",borderRadius:"5px"}} value="Withdraw"/>
+    </form>
             </div>
           </div>
         </div>

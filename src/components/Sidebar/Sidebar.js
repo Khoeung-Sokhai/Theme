@@ -192,7 +192,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-cubes mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/CurrentStock") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -255,7 +255,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-credit-card mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Balance") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
