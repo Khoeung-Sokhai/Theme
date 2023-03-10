@@ -59,22 +59,22 @@ export default function CardRecent() {
             <tbody>
             {getStocks.map((stock) => 
             <tr key={stock.id}>
-                <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                 {stock.id}
                 </th>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                 {stock.sell}
                 </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                 {stock.price}៛
                 </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                 {stock.buy}
                 </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   340
                 </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-blueGray-500 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
                   46,53%
                 </td>
