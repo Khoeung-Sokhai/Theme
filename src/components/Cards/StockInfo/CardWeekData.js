@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {useState,useEffect} from "react";
-// components
 
+import PropTypes from "prop-types";
+import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+// components
 
 
 export default function CardTable({ color }) {
@@ -22,6 +23,22 @@ export default function CardTable({ color }) {
   //   }
   //   fetchStock();
   // }, []);
+  const [getStocks, setStocks] = useState([]);
+
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = 'http://localhost:8080/api/broker-info';
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setStocks(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
   
   return (
     <>
@@ -40,7 +57,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Top Broker
+                Week Data
               </h3>
             </div>
           </div>
@@ -51,15 +68,16 @@ export default function CardTable({ color }) {
             <thead>
               <tr>
                 
-                <th
+                
+                <th  
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Quality
+                 Avg price
                 </th>
                 <th
                   className={
@@ -69,7 +87,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Price
+                  High
                 </th>
                 <th
                   className={
@@ -79,7 +97,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Buy
+                 low
                 </th>
                 <th
                   className={
@@ -88,27 +106,41 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >quality</th>
+                >
+                 % change
+                </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >value day</th>
               </tr>
               
             </thead>
             <tbody>
-              <tr>
-               
+              {getStocks.map((stock) =>
+              <tr key = {stock.id}  >
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
+                  {stock.id}.
+                </td>
+
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-circle text-orange-500 mr-2"></i> pending
+                 {stock.price}
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Okayyy
+                {stock.sell}
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                111
+                 111
                 </td>
               </tr>
-              
+              )}
             </tbody>
           </table>
         </div>

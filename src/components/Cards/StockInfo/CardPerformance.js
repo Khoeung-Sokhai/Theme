@@ -1,8 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import {useState,useEffect} from "react";
 // components
+
+
+
 export default function CardTable({ color }) {
+  // const [getStocks, setStocks] = useState([]);
+
+  // useEffect(() => {
+  //   async function fetchStock() {
+  //     const URL = 'http://localhost:8080/api/broker-info';
+  //     try {
+  //       const res = await axios.get(URL);
+  //       console.log(res.data.data);
+
+  //       setStocks(Object.values(res.data.data));
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchStock();
+  // }, []);
+  
   return (
     <>
       <div
@@ -20,7 +40,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Top Broker
+               Performance Ratios
               </h3>
             </div>
           </div>
@@ -31,17 +51,7 @@ export default function CardTable({ color }) {
             <thead>
               <tr>
                 
-                <th  
-                  className={
-                    "px-6 align-middle text-xs border border-solid py-3 text-center uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >
-                 ipo price
-                </th>
-                <th  
+                <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
                     (color === "light"
@@ -49,7 +59,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 no of issued shares
+                  roe
                 </th>
                 <th
                   className={
@@ -59,7 +69,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  no of listed shares
+                 roa
                 </th>
                 <th
                   className={
@@ -69,7 +79,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 no of non listed shares
+                 debt ratio
                 </th>
                 <th
                   className={
@@ -78,29 +88,13 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >
-                 1st trading date
-                </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >under writer</th>
+                >current ratio</th>
               </tr>
               
             </thead>
             <tbody>
               <tr>
-                <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                 1.
-                </td>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
-                </td>
+               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   <i className="fas fa-circle text-orange-500 mr-2"></i> pending
                 </td>
@@ -111,7 +105,7 @@ export default function CardTable({ color }) {
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                 1111
+                111
                 </td>
               </tr>
               

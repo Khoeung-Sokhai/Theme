@@ -45,7 +45,6 @@ export default function Admin() {
             <Route path="/admin/Sell" exact component={Sell} />
             <Route path="/admin/Buy" exact component={Buy} />
             <Route path="/admin/Change" exact component={Change} />
-            
             <Route path="/admin/Cancel" exact component={Cancel} />
             <Route path="/admin/Balance" exact component={Balance} />
             <Redirect from="/admin" to="/admin/dashboard" />

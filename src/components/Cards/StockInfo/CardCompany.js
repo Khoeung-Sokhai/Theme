@@ -1,9 +1,8 @@
-
-import PropTypes from "prop-types";
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import PropTypes from "prop-types";
+
 // components
+
 
 
 export default function CardTable({ color }) {
@@ -23,22 +22,6 @@ export default function CardTable({ color }) {
   //   }
   //   fetchStock();
   // }, []);
-  const [getStocks, setStocks] = useState([]);
-
-  useEffect(() => {
-    async function fetchStock() {
-      const URL = 'http://localhost:8080/api/broker-info';
-      try {
-        const res = await axios.get(URL);
-        console.log(res.data.data);
-
-        setStocks(Object.values(res.data.data));
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchStock();
-  }, []);
   
   return (
     <>
@@ -57,7 +40,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Week Data
+               Company Profile
               </h3>
             </div>
           </div>
@@ -68,7 +51,7 @@ export default function CardTable({ color }) {
             <thead>
               <tr>
                 
-                
+               
                 <th  
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
@@ -77,7 +60,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Avg price
+                 no of sell
                 </th>
                 <th
                   className={
@@ -87,7 +70,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  High
+                  substantial shareholders
                 </th>
                 <th
                   className={
@@ -97,7 +80,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 low
+                 shareholders's structure
                 </th>
                 <th
                   className={
@@ -107,40 +90,37 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 % change
+                 business highlight
                 </th>
-                <th
+                {/* <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >value day</th>
+                >quality</th> */}
               </tr>
               
             </thead>
             <tbody>
-              {getStocks.map((stock) =>
-              <tr key = {stock.id}  >
+              <tr>
+               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  {stock.id}.
+                  $2,500 USD
                 </td>
-
+               
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 {stock.price}
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                {stock.sell}
+                  Okayyy
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   Okay
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                 111
+                 2000
                 </td>
               </tr>
-              )}
+              
             </tbody>
           </table>
         </div>
