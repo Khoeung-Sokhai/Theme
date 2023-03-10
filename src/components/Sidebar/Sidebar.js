@@ -105,7 +105,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-cart-plus mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Sell") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -171,7 +171,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-store mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/CurrentMarket") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -192,7 +192,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-cubes mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/CurrentStock") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -213,7 +213,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-layer-group mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/StockInfo") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -234,7 +234,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-arrow-up mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Tops") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")

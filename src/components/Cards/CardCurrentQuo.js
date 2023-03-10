@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-export default function CardCurrentQuo() {
+export default function CardCurrentQuo({color}) {
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-2xl rounded-lg">
@@ -10,7 +10,7 @@ export default function CardCurrentQuo() {
           <h3>date</h3>
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 className="font-semibold text-base text-center"style={{ textDecoration:'underline double', textTransform:'uppercase'}}>
+              <h3 className="font-semibold text-base text-center"style={{  textTransform:'uppercase'}}>
               Current Quantations <br />
               Remaining Quantity Of Orders
               </h3>

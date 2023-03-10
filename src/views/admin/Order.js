@@ -2,9 +2,9 @@ import React from "react";
 
 // components
 
-import CardSettings from "components/Cards/CardSettings.js";
-import CardOrderLeft from "components/Cards/CardOrderLeft.js";
-import CardCancel from "components/Cards/CardCancel.js";
+
+import CardOrderLeft from "components/Cards/Order/CardOrderLeft.js";
+import CardCancel from "components/Cards/Order/CardCancel.js";
 
 export default function Settings() {
   return (
