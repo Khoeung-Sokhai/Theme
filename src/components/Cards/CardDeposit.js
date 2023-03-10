@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // components
-export default function CardTable({ color }) {
+export default function CardDeposit({ color }) {
   return (
     <>
       <div
@@ -13,14 +13,14 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase text-center">
               <h3
                 className={
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Top Broker
+                Deposit
               </h3>
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 ipo price
+                 date
                 </th>
                 <th  
                   className={
@@ -49,7 +49,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 no of issued shares
+                Account №
                 </th>
                 <th
                   className={
@@ -59,59 +59,23 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  no of listed shares
+                  Deposited
                 </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >
-                 no of non listed shares
-                </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >
-                 1st trading date
-                </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >under writer</th>
               </tr>
               
             </thead>
             <tbody>
               <tr>
                 <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                 1.
+                 10/03/23
                 </td>
                 
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
+                  111 222 333
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-circle text-orange-500 mr-2"></i> pending
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Okayyy
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Okay
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                 1111
+                <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4" style={{color:"rgb(60, 179, 113)"}}>
+                  2,500 KHR
+                   <i className="fas fa-arrow-up mr-2"></i> 
                 </td>
               </tr>
               
@@ -123,10 +87,10 @@ export default function CardTable({ color }) {
   );
 }
 
-CardTable.defaultProps = {
+CardDeposit.defaultProps = {
   color: "light",
 };
 
-CardTable.propTypes = {
+CardDeposit.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

@@ -22,7 +22,7 @@ import Buy from "views/admin/Buy.js";
 import Sell from "views/admin/Sell.js";
 import Change from "views/admin/Change.js";
 import Cancel from "views/admin/Cancel.js";
-
+import Balance from "views/admin/Balance.js";
 export default function Admin() {
   return (
     <>
@@ -47,7 +47,7 @@ export default function Admin() {
             <Route path="/admin/Change" exact component={Change} />
             
             <Route path="/admin/Cancel" exact component={Cancel} />
-
+            <Route path="/admin/Balance" exact component={Balance} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />

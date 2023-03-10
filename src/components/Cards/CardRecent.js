@@ -2,7 +2,7 @@ import React, {useEffect, useState } from "react";
 import axios from "axios";
 // components
 
-export default function CardPageVisits() {
+export default function CardRecent() {
   const [getStocks, setStocks] = useState([]);
 
   useEffect(() => {
@@ -84,6 +84,5 @@ export default function CardPageVisits() {
           </table>
         </div>
       </div>
- 
   );
 }
