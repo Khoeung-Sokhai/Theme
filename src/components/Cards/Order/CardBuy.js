@@ -13,30 +13,30 @@ export default function CardSettings({color}) {
               className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
               type="button"
             >
-             Order
+              Order
             </button>
           </div>
         </div>
       
         <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
           <form>
-          <div style={{ marginLeft: "10px"}} className="mt-2">
-          <button style={{backgroundColor: "rgb(59 130 246)"} } class="bg-blue-500	 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-2">
+          <div style={{ marginLeft: "auto",marginRight:"auto"}} className="mt-2">
+          <button style={{backgroundColor: "rgb(59 130 246)", width:"108px"} } class="bg-blue-500	 hover:bg-sky-700 text-white font-bold py-2  rounded-2">
           <a href="/admin/Sell">
               Sell
             </a>
          </button>
-           <button style={{backgroundColor: "rgb(59 130 246)"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-2">
+           <button style={{backgroundColor: "Red", width:"108px"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2  rounded-2">
            <a href="/admin/Buy">
               Buy
             </a>
         </button>
-          <button style={{backgroundColor: "red"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-2">
+          <button style={{backgroundColor: "rgb(59 130 246)", width:"108px"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2 rounded-2">
           <a href="/admin/Change">
               Change
             </a>
          </button>
-           <button style={{backgroundColor: "rgb(59 130 246)"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-2">
+           <button style={{backgroundColor: "rgb(59 130 246)", width:"108px"}} class="bg-red-300 hover:bg-sky-700 text-white font-bold py-2  rounded-2">
            <a href="/admin/Cancel">
               Cancel
             </a>

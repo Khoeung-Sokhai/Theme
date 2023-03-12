@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 
-export default function CardCurrentQuo() {
+export default function CardCurrentQuo({color}) {
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 shadow-2xl rounded-lg">

@@ -121,26 +121,26 @@ export default function CardTable({ color }) {
               
             </thead>
             <tbody>
-              {getStocks.map((stock) =>
-              <tr key = {stock.id}  >
+              {/* {getStocks.map((stock) => key = {stock.id}*/}
+              <tr   >
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  {stock.id}.
+                 111
                 </td>
 
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 {stock.price}
+                111
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                {stock.sell}
+                111
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Okay
+                 111
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                  111
                 </td>
               </tr>
-              )}
+              {/* )} */}
             </tbody>
           </table>
         </div>

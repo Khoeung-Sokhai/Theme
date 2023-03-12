@@ -105,7 +105,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-cart-plus mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Sell") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -171,7 +171,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-store mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/CurrentMarket") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -213,13 +213,34 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-layer-group mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/StockInfo") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
                   ></i>{" "}
                   Stock Info
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/ListStock") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/ListStock"
+                >
+                  <i
+                    className={
+                      "fas fa-layer-group mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/ListStock") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  List Of Stock
                 </Link>
               </li>
               <li className="items-center">
@@ -234,7 +255,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-tv mr-2 text-sm " +
+                      "fas fa-arrow-up mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Tops") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
