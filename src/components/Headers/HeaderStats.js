@@ -18,7 +18,7 @@ export default function HeaderStats() {
                 <p>Time: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
             </div>
 
-            <div className="flex flex-wrap mt-4">
+            {/* <div className="flex flex-wrap mt-4">
             
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
@@ -68,7 +68,7 @@ export default function HeaderStats() {
                   statIconColor="bg-lightBlue-500"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
