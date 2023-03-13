@@ -4,9 +4,9 @@ import React from "react";
 
 // import CardLineChart from "components/Cards/CardLineChart.js";
 // import CardBarChart from "components/Cards/CardBarChart.js";
-import CardRecent from "components/Cards/CardRecent.js";
-import CardCurrentQuo from "components/Cards/CardCurrentQuo.js";
-import CardTradeInfo from "components/Cards/CardTradeInfo.js";
+import CardRecent from "components/Cards/CurrentStock/CardRecent.js";
+import CardCurrentQuo from "components/Cards/CurrentStock/CardCurrentQuo.js";
+import CardTradeInfo from "components/Cards/CurrentStock/CardTradeInfo.js";
 
 
 export default function CurrentStock() {

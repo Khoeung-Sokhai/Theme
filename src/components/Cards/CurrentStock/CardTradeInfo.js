@@ -11,7 +11,7 @@ export default function CardTradeInfo() {
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-center uppercase">
-              PRICE INFORMATION
+              Price information
               </h3>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function CardTradeInfo() {
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 className="font-semibold text-base text-center"style={{ textDecoration:'underline double', textTransform:'uppercase'}}>
+              <h3 className="font-semibold text-base text-center uppercase">
               PRICE INFORMATION
               </h3>
             </div>

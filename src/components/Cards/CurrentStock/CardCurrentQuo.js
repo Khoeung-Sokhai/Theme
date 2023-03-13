@@ -5,7 +5,7 @@ import React from "react";
 export default function CardCurrentQuo({color}) {
   return (
     <>
-      <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 shadow-2xl rounded-lg">
+      <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 sshadow-2xl rounded-lg">
         <div className="text-white rounded-t mb-0 px-4 py-3 border-0">
           <h3>date</h3>
           <div className="flex flex-wrap items-center">
@@ -22,7 +22,7 @@ export default function CardCurrentQuo({color}) {
           <table className="items-center w-full bg-transparent border-collapse">
             <thead className="thead-light">
               <tr>
-                <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
+                <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                 Sell Remaing Quantity
                 </th>
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
@@ -31,7 +31,7 @@ export default function CardCurrentQuo({color}) {
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
                 Buy Remaining Quantity
                 </th>
-                <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
+               
               </tr>
             </thead>
             <tbody>
