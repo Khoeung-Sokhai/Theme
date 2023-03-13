@@ -7,7 +7,7 @@ import React from "react";
 import CardRecent from "components/Cards/CurrentStock/CardRecent.js";
 import CardCurrentQuo from "components/Cards/CurrentStock/CardCurrentQuo.js";
 import CardTradeInfo from "components/Cards/CurrentStock/CardTradeInfo.js";
-
+import CardHistoryPrice from "components/Cards/CardHistoryPrice.js";
 
 export default function CurrentStock() {
   return (
@@ -25,6 +25,7 @@ export default function CurrentStock() {
     </div><div className="flex flex-wrap mt-4">
         <div className="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
           <CardRecent />
+          <CardHistoryPrice/>
         </div>
         <div className="w-full xl:w-4/12 px-4">
         </div>

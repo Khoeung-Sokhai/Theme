@@ -11,7 +11,7 @@ export default function FooterAdmin() {
               <div className="text-sm text-white font-semibold py-1 text-center md:text-left">
                   
                 <a
-                  href="http://csx.com.kh/en/about/map.jsp"
+                  href="http://csx.com.kh/en/about/map.jsp"target="_blank" rel="noopener noreferrer"
                   className="text-white hover:text-blueGray-700 text-sm font-semibold py-1"
                 >
                    CSX - Cambodia Securities Exchange{" "}
@@ -30,7 +30,7 @@ export default function FooterAdmin() {
                 </li>
                 <li>
                   <a
-                    href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s"
+                    href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s" target="_blank" rel="noopener noreferrer"
                     className="text-white hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
                   >
                     About Us

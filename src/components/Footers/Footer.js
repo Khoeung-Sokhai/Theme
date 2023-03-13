@@ -67,7 +67,7 @@ export default function Footer() {
                     <li>
                       <a
                         className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                        href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s"
+                        target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s"
                       >
                         About Us
                       </a>

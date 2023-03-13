@@ -29,7 +29,7 @@ export default function Sidebar() {
             
                       <img style={{marginLeft:"60px", height:"80px"}}
                         alt="..."
-                        src={require("assets/img/team-2-800x800.jpg").default}
+                        src={"https://cdn-icons-png.flaticon.com/128/2349/2349057.png"}
                         className="shadow-xl rounded-full  align-middle border-none "
                       />
                    
@@ -37,7 +37,7 @@ export default function Sidebar() {
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
             <li className="inline-block relative">
-              <NotificationDropdown />
+              {/* <NotificationDropdown /> */}
             </li>
             <li className="inline-block relative">
               <UserDropdown />
@@ -87,7 +87,7 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin Layout Pages
+              MANU
             </h6>
             {/* Navigation */}
 
