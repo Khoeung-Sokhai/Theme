@@ -41,7 +41,7 @@ export default function Admin() {
             <Route path="/admin/maps" exact component={Maps} />
           
             <Route path="/admin/tables" exact component={Tables} />
-            <Route path="/admin/CurrentMarket" exact component={CurrentMarket} />
+            <Route path="/" exact component={CurrentMarket} />
             <Route path="/admin/CurrentStock" exact component={CurrentStock} />
             <Route path="/admin/StockInfo" exact component={StockInfo} />
             <Route path="/admin/Tops" exact component={Tops} />

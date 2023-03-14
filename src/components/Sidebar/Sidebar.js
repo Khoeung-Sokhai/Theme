@@ -27,7 +27,7 @@ export default function Sidebar() {
             to="/"
           >
             
-                      <img style={{marginLeft:"60px", height:"80px"}}
+                      <img style={{marginLeft:"60px", height:"50px"}}
                         alt="..."
                         src={require("assets/img/team-2-800x800.jpg").default}
                         className="shadow-xl rounded-full  align-middle border-none "
@@ -86,13 +86,34 @@ export default function Sidebar() {
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+            {/* <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
               Admin Layout Pages
-            </h6>
+            </h6> */}
             {/* Navigation */}
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-              
+            <li className="items-center">
+                <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " 
+                    +
+                    (window.location.href.indexOf("/admin/CurrentMarket") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/"
+                >
+                  <i
+                    className={
+                      "fas fa-store mr-2 text-sm " +
+                      (window.location.href.indexOf("/") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Current Market
+                </Link>
+              </li>
               <li className="items-center">
                 <Link
                   className={
@@ -159,27 +180,7 @@ export default function Sidebar() {
                   Tables
                 </Link>
               </li> */}
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/CurrentMarket") !== -1
-                      ? "text-lightBlue-500 hover:text-lightBlue-600"
-                      : "text-blueGray-700 hover:text-blueGray-500")
-                  }
-                  to="/admin/CurrentMarket"
-                >
-                  <i
-                    className={
-                      "fas fa-store mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/CurrentMarket") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Current Market
-                </Link>
-              </li>
+            
               <li className="items-center">
                 <Link
                   className={

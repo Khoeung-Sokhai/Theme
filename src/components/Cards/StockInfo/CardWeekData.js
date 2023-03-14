@@ -121,10 +121,11 @@ export default function CardTable({ color }) {
               
             </thead>
             <tbody>
-              {/* {getStocks.map((stock) => key = {stock.id}*/}
-              <tr   >
+         
+               {getStocks.map((stock) => 
+              <tr key = {stock.id}>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 111
+                {stock.id}
                 </td>
 
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -140,7 +141,7 @@ export default function CardTable({ color }) {
                  111
                 </td>
               </tr>
-              {/* )} */}
+              )}
             </tbody>
           </table>
         </div>

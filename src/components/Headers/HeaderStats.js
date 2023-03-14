@@ -13,7 +13,7 @@ export default function HeaderStats() {
           
           <div>
             {/* Card stats */}
-            <div style={{marginLeft:"500px", marginTop: "-50px", maxWidth: "200px" }} className="text-center  text-white text-xl  w-3 ">
+            <div style={{marginLeft:"auto",marginRight:"auto", marginTop: "-40px" }} className="text-center  text-white text-xl  w-3 ">
                 <p>Data: <Clock format={'DD-MM-YYYY'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
                 <p>Time: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
             </div>
