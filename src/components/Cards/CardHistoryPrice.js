@@ -5,9 +5,7 @@ import ReactApexChart from "react-apexcharts";
 export default class App extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-
             series: [{
                 data: [{
                     x: new Date(1538778600000),
