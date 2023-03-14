@@ -255,7 +255,7 @@ export default class App extends Component {
                     height: 350
                 },
                 title: {
-                    text: 'CandleStick Chart',
+                    text: 'Stock Name',
                     align: 'left'
                 },
                 xaxis: {

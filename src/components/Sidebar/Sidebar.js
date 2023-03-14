@@ -78,7 +78,7 @@ export default function Sidebar() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="border-0 px-3 py-2 h-12 border border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
+                  className="border-0 px-3 py-2 h-12 border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
                 />
               </div>
             </form>
@@ -97,16 +97,16 @@ export default function Sidebar() {
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/Sell") !== -1
+                    (window.location.href.indexOf("/admin/Buy") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/admin/Sell"
+                  to="/admin/Buy"
                 >
                   <i
                     className={
                       "fas fa-cart-plus mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/Sell") !== -1
+                      (window.location.href.indexOf("/admin/Buy") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }

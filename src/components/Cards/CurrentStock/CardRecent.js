@@ -3,21 +3,21 @@ import axios from "axios";
 // components
 
 export default function CardRecent() {
-  const [getStocks, setStocks] = useState([]);
+  const [getRecent, setRecent] = useState([]);
 
   useEffect(() => {
-    async function fetchStock() {
-      const URL = 'http://localhost:8080/api/broker-info';
+    async function fetchRecent() {
+      const URL = 'http://localhost:8080/api/recent-info';
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
 
-        setStocks(Object.values(res.data.data));
+        setRecent(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
       }
     }
-    fetchStock();
+    fetchRecent();
   }, []);
   return (
 
@@ -57,27 +57,28 @@ export default function CardRecent() {
               </tr>
             </thead>
             <tbody>
-            {getStocks.map((stock) => 
-            <tr key={stock.id}>
+            {getRecent.map((recent) => 
+            <tr key={recent.id}>
                 <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {stock.id}
+                {recent.time}
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {stock.sell}
+                {recent.execution_price}៛
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {stock.price}៛
+                {recent.change}
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {stock.buy}
+                {recent.change_}%
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  340
+                {recent.trade_volume}
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  46,53%
+                  {recent.trade_volume}
                 </td>
+
               </tr>)}
 
             </tbody>
