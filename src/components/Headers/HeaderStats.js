@@ -13,9 +13,9 @@ export default function HeaderStats() {
           
           <div>
             {/* Card stats */}
-            <div style={{marginLeft:"auto",marginRight:"auto", marginTop: "-100px"}} className="text-center  text-white text-xl  w-3 ">
-                {/* <p>Data: <Clock format={'DD-MM-YYYY'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
-                <p>Time: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Bangkok/Pacific'} /></p> */}
+            <div style={{marginLeft:"auto",marginRight:"auto", marginTop: "-40px" }} className="text-center  text-white text-xl  w-3 ">
+                <p>Data: <Clock format={'DD-MM-YYYY'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
+                <p>Time: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
             </div>
 
             {/* <div className="flex flex-wrap mt-4">
