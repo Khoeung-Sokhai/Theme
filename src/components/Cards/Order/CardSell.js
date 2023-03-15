@@ -14,8 +14,7 @@ export default function CardSettings({ color }) {
     {value: '1', text: 'Sell'},
     {value: '2', text: 'Buy'},
     {value: '3', text: 'Change'},
-    {value: '4', text: 'Cancel'},
-    
+    {value: '4', text: 'Cancel'}, 
   ];
   
   const [orderUV, setOrderUV] = useState("");
@@ -32,7 +31,7 @@ export default function CardSettings({ color }) {
     e.preventDefault();
     var data = JSON.stringify({
       orderUV: orderUV,
-      accountNo: "2",
+      accountNo: "000003",
       // orderNo: orderNo,
       orderQty: orderQty,
       originalOrderNo: "1",
@@ -74,14 +73,20 @@ export default function CardSettings({ color }) {
  
   return (
     <>
+     {/* <script>
+              function alert() {
+                  alert("Your file is being uploaded!")
+              }
+    </script> */}
       <form onSubmit={GetbrokerAPI} action="/admin/Sell">
         <div className="bg-lightBlue-800 text-white border-lightBlue-700 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
           <div className="rounded-t mb-0 px-6 py-6">
             <div className="text-center flex justify-between">
               <h6 className=" text-xl font-bold">Make Order</h6>
               <button
-                className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
+                onclick="alert()"
               >
                 Order
               </button>
@@ -125,6 +130,7 @@ export default function CardSettings({ color }) {
                   onChange={(e) => setIssueCode(e.target.value)}
                   value={issueCode}
                     type="text"
+                    required
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   />
                 </div>
@@ -159,6 +165,7 @@ export default function CardSettings({ color }) {
                     // defaultValue="Lucky"
                     onChange={(e) => setOrderQty(e.target.value)}
                     value={orderQty}
+                    required
                   />
                 </div>
               </div>
@@ -176,6 +183,7 @@ export default function CardSettings({ color }) {
                     // defaultValue="Lucky"
                     onChange={(e) => setOrderUV(e.target.value)}
                     value={orderUV}
+                    required
                   />
                 </div>
               </div>
@@ -189,6 +197,7 @@ export default function CardSettings({ color }) {
               onChange={(e) => setBrokerId(e.target.value)} 
               value={brokerId}
               className="uppercase text-black"
+              
             >
               <option  value="001">Broker A</option>
               <option  value="002">Broker B</option>
