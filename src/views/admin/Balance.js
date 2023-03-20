@@ -2,8 +2,8 @@ import React from "react";
 
 // components
 
-import CardDeposit from "components/Cards/CardDeposit";
-import CardWithDraw from "components/Cards/CardWithDraw";
+import CardDeposit from "components/Cards/Balance/CardDeposit";
+import CardWithDraw from "components/Cards/Balance/CardWithDraw";
 export default function Balance() {
   return (
     <>

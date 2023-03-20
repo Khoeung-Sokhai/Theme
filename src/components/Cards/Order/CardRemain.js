@@ -26,20 +26,20 @@ export default function CardListTrade({ color }) {
     <>
        <div
               className={
-                "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
+                "mt-8 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
                 (color === "light" ? "bg-white" : "bg-lightBlue-900 text-white")
               }
             >
               <div className="rounded-t mb-0 px-4 py-3 border-0">
-                <div className="flex flex-wrap items-center">
-                  <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase">
+                <div className="flex flex-wrap items-center ">
+                  <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-center uppercase">
                     <h3
                       className={
-                        "font-semibold text-lg text-center " +
+                        "font-semibold text-lg " +
                         (color === "light" ? "text-blueGray-700" : "text-white")
                       }
                     >
-                      List Trade
+                      Remain data
                     </h3>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function CardListTrade({ color }) {
                             : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                         }
                       >
-                        IssueNo
+                        Issue No
                       </th>
                       <th
                         className={
@@ -67,11 +67,11 @@ export default function CardListTrade({ color }) {
                             : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                         }
                       >
-                        IssueName
+                        Issue Name
                       </th>
                       <th
                         className={
-                          "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
+                          "px-6 align-middle border border-solid py-3 text-xs  uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                           (color === "light"
                             ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                             : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -85,13 +85,13 @@ export default function CardListTrade({ color }) {
                   {getStocks.map((stock) =>
                     <tr key={stock.id}>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                      {stock.issueCode}
+                      {stock.orderNo}
                       </td>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                      {/* {stock.time} */}Sokhai
+                      {stock.issueName}
                       </td>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                      {stock.orderQty}
+                      {stock.orderDt}
                       </td>
                     </tr>)}
                     

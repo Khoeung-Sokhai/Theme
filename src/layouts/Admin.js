@@ -25,6 +25,8 @@ import Cancel from "views/admin/Cancel.js";
 import Balance from "views/admin/Balance.js";
 import ListStock from "views/admin/ListStock.js";
 
+import Loading from "components/Cards/loading";
+
 // import b from "../assets/img/background.jpg";
 
 export default function Admin() {
@@ -39,6 +41,7 @@ export default function Admin() {
         <div style={{ backgroundColor: "#07539e" }} className="px-4 md:px-10 mx-auto w-full -m-24">
           <Switch  >
             <Route path="/admin/maps" exact component={Maps} />
+            <Route path="/admin/loading" exact component={Loading} />
           
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/" exact component={CurrentMarket} />

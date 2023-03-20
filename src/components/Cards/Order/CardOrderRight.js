@@ -1,27 +1,27 @@
-import React from "react";
 import PropTypes from "prop-types";
-// import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import React from "react";
 // components
 
-
 export default function CardTable({ color }) {
-  // const [getStocks, setStocks] = useState([]);
+  const [getStocks, setStocks] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchStock() {
-  //     const URL = 'http://localhost:8080/api/broker-info';
-  //     try {
-  //       const res = await axios.get(URL);
-  //       console.log(res.data.data);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/broker-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
 
-  //       setStocks(Object.values(res.data.data));
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchStock();
-  // }, []);
-  
+        setStocks(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
+
   return (
     <>
       <div
@@ -32,14 +32,14 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase">
               <h3
                 className={
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-             Base Price
+                Base Price
               </h3>
             </div>
           </div>
@@ -49,7 +49,8 @@ export default function CardTable({ color }) {
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
-                <th rowSpan="2"
+                <th
+                  rowSpan="2"
                   className={
                     "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
                     (color === "light"
@@ -59,7 +60,8 @@ export default function CardTable({ color }) {
                 >
                   Max Price
                 </th>
-                <th rowSpan="2"
+                <th
+                  rowSpan="2"
                   className={
                     "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
                     (color === "light"
@@ -69,7 +71,7 @@ export default function CardTable({ color }) {
                 >
                   Base Price
                 </th>
-                <th  
+                <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
@@ -77,31 +79,22 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                Min Price
+                  Min Price
                 </th>
-                
               </tr>
-              
             </thead>
             <tbody>
-             
-     
               <tr>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                 10000
+                  10000
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                 9000
+                  9000
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                 8000
+                  8000
                 </td>
-                
-                              
               </tr>
-     
-             
-             
             </tbody>
           </table>
         </div>
@@ -114,7 +107,7 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-center uppercase">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -128,23 +121,33 @@ export default function CardTable({ color }) {
         </div>
         <div className="block w-full overflow-x-auto">
           {/* Projects table */}
-          <table className="items-center w-full bg-transparent border-collapse">
+          <table className="items-center text-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
-                
-                <th  
+                <th
+                  rowSpan="2"
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "text-left  px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                Remain
+                  ID
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold  " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >
+                  sell
+                </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold  " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -154,149 +157,45 @@ export default function CardTable({ color }) {
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold  " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  remain
+                  buy
                 </th>
-                
               </tr>
-              
             </thead>
             <tbody>
-             
-     
-              <tr>
-               
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 
-                </td>
-                              
-              </tr>
-     
-              <tr>
-              
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 
-                </td>
-                              
-              </tr>
-     
-              <tr>
-                
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 
-                </td>
-                              
-              </tr>
-     
-              <tr>
-               
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 
-                </td>
-                              
-              </tr>
-     
-              <tr>
-                
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-               
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 200
-                </td>
-                              
-              </tr>
-     
-              <tr>
-                
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                              
-              </tr>
-             
-              <tr>
-                
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                              
-              </tr>
-             
-              <tr>
-               
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 100
-                </td>
-                              
-              </tr>
-             
-             
+              {getStocks.slice(0, 5).map((stock, index) => (
+                <tr key={stock.id}>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 flex items-center text-center">
+                    {index + 1}.
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {stock.orderQty}
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {stock.orderUV}
+                  </td>
+                </tr>
+              ))}
+              {getStocks.slice(5, 10).map((stock, index) => (
+                <tr key={stock.id}>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 flex items-center text-center">
+                    {index + 6}.
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"></td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {stock.orderQty}
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  {stock.orderUV}
+                  </td>
+                </tr>
+              ))}
             </tbody>
-            {/* <hr className="mt-6 border-b-1 border-blueGray-300" />
-            <tr>
-                <td  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">                
-                  10.
-                </td>              
-              </tr> */}
           </table>
         </div>
       </div>
