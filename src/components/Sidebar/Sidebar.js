@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
+// import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
 import UserDropdown from "components/Dropdowns/UserDropdown.js";
 
 export default function Sidebar() {
@@ -118,16 +118,16 @@ export default function Sidebar() {
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/Buy") !== -1
+                    (window.location.href.indexOf("/admin/Sell") !== -1
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/admin/Buy"
+                  to="/admin/Sell"
                 >
                   <i
                     className={
                       "fas fa-cart-plus mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/Buy") !== -1
+                      (window.location.href.indexOf("/admin/Sell") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }

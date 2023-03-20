@@ -30,6 +30,9 @@
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^5.7.0",
+    "react-toastify": "^9.0.3",
+    "reactjs-alert": "^2.2.0",
     "tailwindcss": "2.0.4"
   },
   "scripts": {

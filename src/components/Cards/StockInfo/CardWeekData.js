@@ -27,7 +27,7 @@ export default function CardTable({ color }) {
 
   useEffect(() => {
     async function fetchStock() {
-      const URL = 'http://localhost:8080/api/broker-info';
+      const URL = 'http://localhost:8080/api/buy-info';
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -121,15 +121,15 @@ export default function CardTable({ color }) {
               
             </thead>
             <tbody>
-         
-               {getStocks.map((stock) => 
-              <tr key = {stock.id}>
+            {/* .slice(0,2) */}
+               {getStocks.map((stock,index) => 
+              <tr key = {index}>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                {stock.id}
+                {index+1}
                 </td>
 
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                111
+               {Math.max}
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                 111
