@@ -4,7 +4,7 @@ import React from "react";
 
 import CardBuy from "components/Cards/Order/CardBuy.js";
 import CardOrderRight from "components/Cards/Order/CardOrderRight.js";
-import LayoutOrder from "components/Cards/Order/LayoutOrder.js";
+// import LayoutOrder from "components/Cards/Order/LayoutOrder.js";
 export default function Settings() {
   return (
     <>
