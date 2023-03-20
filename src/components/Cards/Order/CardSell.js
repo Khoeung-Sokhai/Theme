@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // components
 import axios from "axios";
-import CardRemain from "components/Cards/Order/CardRemain.js";
+import CardRemain from "components/Cards/Order/CardRemain";
 export default function CardSettings({ color }) {
   
   const brokers = [  
@@ -26,7 +26,8 @@ export default function CardSettings({ color }) {
   const [issueCode, setIssueCode] = useState("");
   const [orderType, setOrderType] = useState(types[0].value);
   const [brokerId, setBrokerId] = useState(brokers[0].value);
-  
+
+
  
   function GetbrokerAPI(e) {
     e.preventDefault();
@@ -81,13 +82,46 @@ export default function CardSettings({ color }) {
               <h6 className=" text-xl font-bold uppercase">Make Order</h6>
               <button
                 className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                type="submit"
+                type="submit" onClick={() => window.location.reload(true)}
               >
                 Order
               </button>
             </div>
           </div>
-
+          <div style={{width:"100px", marginLeft:"auto", marginRight:"auto"}}>
+          <select
+              style={{
+                // marginLeft: "25px",
+                borderRadius: "5px",
+                backgroundColor: "wheat",
+              }}
+              onChange={(e) => setBrokerId(e.target.value)} 
+              value={brokerId}
+              className="uppercase text-black"
+            >
+              <option  value="001">Broker A</option>
+              <option  value="002">Broker B</option>
+              <option  value="003">Broker C</option>
+              <option  value="004">Broker D</option>
+              {/* <option  value="3">Broker C</option> */}
+            </select>
+            <select
+            style={{
+              // marginLeft: "150px",
+              borderRadius: "5px",
+              backgroundColor: "wheat",
+            }}
+              className="uppercase text-black"
+              onChange={(e) => setOrderType(e.target.value)} 
+              value={orderType}
+            >
+              <option value="1">Sell</option>
+              <option value="2">Buy</option>
+              <option value="3">Change</option>
+              <option value="4">Cancel</option>
+            </select> 
+            </div>
+            <hr className="mt-6 border-b-1 border-blueGray-300" />
           <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
             <div className="flex flex-wrap mt-8">
               <div className="w-full lg:w-6/12 px-4">
@@ -158,37 +192,7 @@ export default function CardSettings({ color }) {
               </div>
             </div>
             <div>
-            <select
-              style={{
-                marginLeft: "25px",
-                borderRadius: "5px",
-                backgroundColor: "wheat",
-              }}
-              onChange={(e) => setBrokerId(e.target.value)} 
-              value={brokerId}
-              className="uppercase text-black"
-            >
-              <option  value="001">Broker A</option>
-              <option  value="002">Broker B</option>
-              <option  value="003">Broker C</option>
-              <option  value="004">Broker D</option>
-              {/* <option  value="3">Broker C</option> */}
-            </select>
-            <select
-            style={{
-              marginLeft: "40px",
-              borderRadius: "5px",
-              backgroundColor: "wheat",
-            }}
-              className="uppercase text-black"
-              onChange={(e) => setOrderType(e.target.value)} 
-              value={orderType}
-            >
-              <option value="1">Sell</option>
-              <option value="2">Buy</option>
-              <option value="3">Change</option>
-              <option value="4">Cancel</option>
-            </select> 
+
             <hr className="mt-6 border-b-1 border-blueGray-300" />
             <CardRemain color="dark"/>
             </div>

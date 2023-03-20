@@ -14,7 +14,7 @@ import Auth from "layouts/Auth.js";
 
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
-// import Index from "views/Index.js";
+import Loading from "components/Cards/CardLoading";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -26,6 +26,7 @@ ReactDOM.render(
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
       <Route path="/" exact component={Admin} />
+      <Route path="/loading" exact component={Loading} />
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />
     </Switch>

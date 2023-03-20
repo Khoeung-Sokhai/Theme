@@ -1,4 +1,4 @@
-// import React from "react";
+
 import PropTypes from "prop-types";
 import {useState,useEffect} from "react";
 import axios from "axios";
@@ -34,7 +34,7 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase text-center">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -53,7 +53,7 @@ export default function CardTable({ color }) {
               <tr>
                 <th rowSpan="2"
                   className={
-                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
+                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -63,7 +63,7 @@ export default function CardTable({ color }) {
                 </th>
                 <th rowSpan="2"
                   className={
-                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
+                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -73,7 +73,7 @@ export default function CardTable({ color }) {
                 </th>
                 <th  
                   className={
-                    "px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
+                    "px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -188,20 +188,12 @@ export default function CardTable({ color }) {
                 </td><td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   {stock.orderUV}
                 </td>
-               
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  {stock.orderDate}
+                </td>
                               
               </tr>)}
-     
-             
-             
-             
             </tbody>
-            {/* <hr className="mt-6 border-b-1 border-blueGray-300" />
-            <tr>
-                <td  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4  flex items-center">                
-                  10.
-                </td>              
-              </tr> */}
           </table>
         </div>
       </div>
