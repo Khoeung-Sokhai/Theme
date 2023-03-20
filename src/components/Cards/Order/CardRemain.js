@@ -82,17 +82,17 @@ export default function CardListTrade({ color }) {
                     </tr>
                   </thead>
                   <tbody>
-                  {getStocks.map((stock) =>
+                  {getStocks.slice(0,10).map((stock) =>
                     <tr key={stock.id}>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                      {stock.orderNo}
+                      {stock.issueCode}
                       </td>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                      {stock.issueName}
+                      {stock.issueSymbol}
                       </td>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                       {stock.orderQty}
-                      </td>
+                      </td> 
                     </tr>)}
                     
                   </tbody>

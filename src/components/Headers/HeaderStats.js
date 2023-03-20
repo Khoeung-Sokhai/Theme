@@ -2,7 +2,7 @@ import React from "react";
 import Clock from 'react-live-clock';
 // components
 
-import CardStats from "components/Cards/CardStats.js";
+// import CardStats from "components/Cards/CardStats.js";
 
 export default function HeaderStats() {
   return (
