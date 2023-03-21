@@ -25,7 +25,9 @@ import Cancel from "views/admin/Cancel.js";
 import Balance from "views/admin/Balance.js";
 import ListStock from "views/admin/ListStock.js";
 
-import Loading from "components/Cards/loading";
+import Loading from "components/Cards/loading.js";
+import AboutUs from "views/admin/AboutUs.js";
+import ContactUs from "views/admin/ContactUs.js";
 
 // import b from "../assets/img/background.jpg";
 
@@ -55,6 +57,8 @@ export default function Admin() {
             <Route path="/admin/Cancel" exact component={Cancel} />
             <Route path="/admin/Balance" exact component={Balance} />
             <Route path="/admin/ListStock" exact component={ListStock} />
+            <Route path="/admin/about-us" exact component={AboutUs} />
+            <Route path="/admin/contact-us" exact component={ContactUs} />
           
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>

@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from "react";
-import Select from "react-select";
+// import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import CardRemain from "components/Cards/Order/CardRemain.js";
 
+// import Skeleton from 'react-loading-skeleton'
+// import 'react-loading-skeleton/dist/skeleton.css'
+// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
 export default function CardSettings({ color }) {
 
+  var date = new Date();
   const refresh = () => window.location.reload(true);
 
-  const notify = () =>
-    toast.success("Make Order Successfully...🤪", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
-  const [orderUV, setOrderUV] = useState("");
+  // const notify = () =>
+  //   toast.success("Make Order Successfully...🤪", {
+  //     position: "top-center",
+  //     autoClose: 2000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "colored",
+  //   });
+  const [orderUV, setOrderUV] = useState([]);
   // const [accountNo, setAccountNo] = useState("");
   // const [orderNo, setOrderNo] = useState("");
-  const [orderQty, setOrderQty] = useState("");
+  const [orderQty, setOrderQty] = useState([]);
   // const [originalOrderNo, setOriginalOrderNo] = useState("");
-  const [issueCode, setIssueCode] = useState();
-  const [orderType, setOrderType] = useState();
-  const [brokerId, setBrokerId] = useState();
+  const [issueCode, setIssueCode] = useState([]);
+  const [orderType, setOrderType] = useState([]);
+  const [brokerId, setBrokerId] = useState([]);
   // const [orderDate, setOrderDate] = useState("");
 
   const [getStocks, setStocks] = useState([]);
@@ -87,7 +92,7 @@ export default function CardSettings({ color }) {
       orderQty: orderQty,
       originalOrderNo: "1",
       brokerId: brokerId,
-      orderDate: "2023-03-18",
+      orderDate: date,
       issueCode: issueCode,
       orderType: orderType,
       // issueName: issueName,
@@ -123,11 +128,14 @@ export default function CardSettings({ color }) {
 
   return (
     <>
+    
+    
       <form onSubmit={GetbrokerAPI} action="/admin/Sell">
         <div className="bg-lightBlue-800 text-white border-lightBlue-700 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
           <div className="rounded-t mb-0 px-6 py-6">
             <div className="text-center flex justify-between">
               <h6 className=" text-xl font-bold uppercase">Make Order</h6>
+              
               <button
                 className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
@@ -267,6 +275,7 @@ export default function CardSettings({ color }) {
                     required
                     placeholder="Quantity..."
                   />
+              
                 </div>
               </div>
               <div className="w-full lg:w-6/12 px-4">
