@@ -124,7 +124,7 @@ export default function CardTable({ color }) {
           <table className="items-center text-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
-                <th
+                {/* <th
                   rowSpan="2"
                   className={
                     "text-left  px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold " +
@@ -134,7 +134,7 @@ export default function CardTable({ color }) {
                   }
                 >
                   ID
-                </th>
+                </th> */}
                 <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold  " +
@@ -168,20 +168,47 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getStocks.slice(0, 5).map((stock, index) => (
+              {getStocks.slice(0, 12).map((stock, index) => (
                 <tr key={stock.id}>
-                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 flex items-center text-center">
-                    {index + 1}.
-                  </td>
-                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {stock.orderQty}
-                  </td>
-                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {stock.orderUV}
-                  </td>
+                  {(() => {
+                    if (stock.orderType == 1) {
+                      return (
+                        <>
+                         
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {stock.orderQty}
+                          </td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {stock.orderUV}
+                          </td>
+                        </>
+                      );
+                    } 
+                  })()}
                 </tr>
               ))}
-              {getStocks.slice(5, 10).map((stock, index) => (
+              {getStocks.slice(0, 12).map((stock, index) => (
+                <tr key={stock.id}>
+                  {(() => {
+                    if (stock.orderType == 2) {
+                      return (
+                        <>
+                         
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"></td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {stock.orderUV}
+                          </td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                            {stock.orderQty}
+                          </td>
+                        </>
+                      );
+                    }
+                  })()}
+                </tr>
+              ))}
+
+              {/* {getStocks.slice(5, 10).map((stock, index) => (
                 <tr key={stock.id}>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 flex items-center text-center">
                     {index + 6}.
@@ -191,10 +218,10 @@ export default function CardTable({ color }) {
                     {stock.orderQty}
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  {stock.orderUV}
+                    {stock.orderUV}
                   </td>
                 </tr>
-              ))}
+              ))} */}
             </tbody>
           </table>
         </div>

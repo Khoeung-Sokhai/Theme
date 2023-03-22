@@ -30,7 +30,7 @@ export default function FooterAdmin() {
                 </li>
                 <li>
                   <a
-                    href="https://www.youtube.com/watch?v=GJlNvSC5v6s&t=1997s" target="_blank" rel="noopener noreferrer"
+                    href="/admin/about-us"  rel="noopener noreferrer"
                     className="text-white hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
                   >
                     About Us
@@ -38,10 +38,10 @@ export default function FooterAdmin() {
                 </li>
                 <li>
                   <a
-                    href="http://blog.creative-tim.com?ref=nr-footer-admin"
+                    href="/admin/contact-us"
                     className="text-white hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
                   >
-                    Blog
+                    Contact Us
                   </a>
                 </li>
                 <li>

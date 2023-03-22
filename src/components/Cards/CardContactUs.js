@@ -88,13 +88,14 @@ export default function ContactUs({ color }) {
                     <form onSubmit={GetContactAPI} >
         
                     <h4 className="text-2xl font-semibold ">
-                      Want to work with us?
+                      Contact Us
                     </h4>
                     <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
                       Complete this form and we will get back to you in 24
                       hours.
                     </p>
-                    <div className="relative w-full mb-3 mt-8">
+                    <hr className=" border-b-1 border-blueGray-300" />
+                    <div className="relative w-full mb-3 mt-4">
                       <label
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="full-name"
@@ -148,6 +149,7 @@ export default function ContactUs({ color }) {
                         placeholder="Type a message..."
                       />
                     </div>
+                    <hr className="mt-4 border-b-1 border-blueGray-300" />
                     <div className="text-center mt-6">
                       <button
                         className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

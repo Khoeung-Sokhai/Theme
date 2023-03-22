@@ -17,7 +17,7 @@ export default function HeaderStats() {
                 <p>Data: <Clock format={'DD-MM-YYYY'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
                 <p>Time: <Clock format={'hh:mm:ss A'} ticking={true} timezone={'Bangkok/Pacific'} /></p>
             </div>
-
+            <hr style={{width:"250px", marginLeft:"auto",marginRight:"auto"}} className="  mt-4 border-b-1 border-blueGray-300" />
             {/* <div className="flex flex-wrap mt-4">
             
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
