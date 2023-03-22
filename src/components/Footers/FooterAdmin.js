@@ -30,7 +30,7 @@ export default function FooterAdmin() {
                 </li>
                 <li>
                   <a
-                    href="/admin/about-us"  rel="noopener noreferrer"
+                    href="/admin/about-us" target="_self" rel="noopener noreferrer"
                     className="text-white hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
                   >
                     About Us

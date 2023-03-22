@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Register() {
   return (
     <>
@@ -12,10 +12,11 @@ export default function Register() {
                   <h6 className="text-blueGray-500 text-sm font-bold">
                     Sign up with
                   </h6>
+
                 </div>
                 <div className="btn-wrapper text-center">
                   <button
-                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
+                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center text-xs ease-linear transition-all duration-150"
                     type="button"
                   >
                     <img
@@ -26,7 +27,7 @@ export default function Register() {
                     Github
                   </button>
                   <button
-                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
+                    className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center text-xs ease-linear transition-all duration-150"
                     type="button"
                   >
                     <img
@@ -85,7 +86,22 @@ export default function Register() {
                       placeholder="Password"
                     />
                   </div>
+                  <div className="relative w-full mb-3" >
+                    <label
+                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      htmlFor="grid-password"
+                    >
+                      Type
+                    </label>
+                    <input type="radio" id="radiovip" name="align"  value="vip"/>
+                    <label className="e-btn ml-2" htmlFor="radiovip">VIP</label>
 
+                    <input type="radio" id="radiocompany" name="align" style={{marginLeft:'20px'}} value="company"/>
+                    <label className="e-btn ml-2"  htmlFor="radiocompany">Company</label>
+
+                    <input type="radio" id="radionormal" name="align" style={{marginLeft:'20px'}} value="normal"/>
+                    <label className="e-btn ml-2" htmlFor="radionormal">Normal</label>
+                  </div>
                   <div>
                     <label className="inline-flex items-center cursor-pointer">
                       <input
@@ -115,11 +131,16 @@ export default function Register() {
                     </button>
                   </div>
                 </form>
+                <Link to="/auth/login" className="text-blueGray-500">
+                  <small>Already have an account?</small>
+                </Link>
               </div>
+
             </div>
           </div>
-        </div>
+        </div>     
       </div>
+
     </>
   );
 }

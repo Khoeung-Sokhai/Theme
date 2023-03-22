@@ -128,8 +128,6 @@ export default function CardSettings({ color }) {
 
   return (
     <>
-    
-    
       <form onSubmit={GetbrokerAPI} action="/admin/Sell">
         <div className="bg-lightBlue-800 text-white border-lightBlue-700 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
           <div className="rounded-t mb-0 px-6 py-6">

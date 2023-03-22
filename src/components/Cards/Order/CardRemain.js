@@ -7,6 +7,8 @@ import axios from "axios";
 export default function CardListTrade({ color }) {
   const [getStocks, setStocks] = useState([]);
 
+  
+ 
   useEffect(() => {
     async function fetchStock() {
       const URL = 'http://localhost:8080/api/broker-info';
@@ -82,7 +84,7 @@ export default function CardListTrade({ color }) {
                     </tr>
                   </thead>
                   <tbody>
-                  {getStocks.slice(0,10).map((stock) =>
+                  {getStocks.sort((a, b) => a.orderQty - b.orderQty).slice(0,5).map((stock) =>
                     <tr key={stock.id}>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                       {stock.issueCode}
@@ -90,6 +92,7 @@ export default function CardListTrade({ color }) {
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                       {stock.issueSymbol}
                       </td>
+        
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                       {stock.orderQty}
                       </td> 

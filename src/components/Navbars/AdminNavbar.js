@@ -40,7 +40,6 @@ export default function Navbar() {
                         src={"https://cdn-icons-png.flaticon.com/128/2349/2349057.png"}
                         className="shadow-xl rounded-full  align-middle border-none "
                       />
-                   
           </Link>
         </div>
       </nav>

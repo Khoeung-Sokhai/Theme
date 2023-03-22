@@ -32,7 +32,7 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase text-center">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -52,7 +52,7 @@ export default function CardTable({ color }) {
                 <th
                   rowSpan="2"
                   className={
-                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
+                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -63,7 +63,7 @@ export default function CardTable({ color }) {
                 <th
                   rowSpan="2"
                   className={
-                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold  text-center " +
+                    "  px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -73,7 +73,7 @@ export default function CardTable({ color }) {
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
+                    "px-6 align-middle border border-solid py-3 text-base  border-l-0 border-r-0 whitespace-nowrap font-semibold uppercase text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -168,13 +168,13 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getStocks.slice(0, 12).map((stock, index) => (
+              {getStocks.sort((a, b) => b.orderUV - a.orderUV).map((stock, index) => (
                 <tr key={stock.id}>
                   {(() => {
                     if (stock.orderType == 1) {
                       return (
                         <>
-                         
+    
                           <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                             {stock.orderQty}
                           </td>
@@ -187,7 +187,7 @@ export default function CardTable({ color }) {
                   })()}
                 </tr>
               ))}
-              {getStocks.slice(0, 12).map((stock, index) => (
+              {getStocks.sort((a, b) => a.orderUV - b.orderUV).map((stock, index) => (
                 <tr key={stock.id}>
                   {(() => {
                     if (stock.orderType == 2) {
@@ -219,9 +219,15 @@ export default function CardTable({ color }) {
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     {stock.orderUV}
-                  </td>
-                </tr>
+                </td>
+               
+                              
+              </tr>
               ))} */}
+     
+             
+             
+             
             </tbody>
           </table>
         </div>
