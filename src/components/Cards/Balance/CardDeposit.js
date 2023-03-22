@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 // components
 export default function CardDeposit({ color }) {
-  const [name, setName] = useState("");
+  const [deposit, setName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Your deposit was: ${name}`);} 
+    alert(`Your deposit was: ${deposit}`);} 
   return (
     <>
       <div
@@ -31,7 +31,7 @@ export default function CardDeposit({ color }) {
       <label>
         <input 
           type="number" style={{backgroundColor:"lightBlue",color:"black",width:"200px",height:"30px",borderRadius:"5px"}}
-          value={name}
+          value={deposit}
           onChange={(e) => setName(e.target.value)}
         />
       </label> &nbsp;
@@ -89,7 +89,7 @@ export default function CardDeposit({ color }) {
                   111 222 333
                 </td>
                 <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4" style={{color:"rgb(60, 179, 113)"}}>
-                  2,500 KHR
+                  2,500 KHR&#6107;
                    <i className="fas fa-arrow-up mr-2"></i> 
                 </td>
               </tr>

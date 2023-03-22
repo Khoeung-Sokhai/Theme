@@ -3,6 +3,9 @@ import React from "react";
 // components
 
 export default function CardBalance() {
+
+
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 sshadow-2xl rounded-lg">
@@ -35,7 +38,7 @@ export default function CardBalance() {
             <tbody>
               <tr>
                 <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                001002
+                111 222 333
                 </td>
                 <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   1,480 KHR

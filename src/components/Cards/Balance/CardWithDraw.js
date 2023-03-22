@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 
 // components
 export default function CardWithDraw({ color }) {
-    const [name, setName] = useState("");
+    const [withdraw, setName] = useState("");
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      alert(`Your withdraw was: ${name}`);} 
+      alert(`Your withdraw was: ${withdraw}`);} 
   return (
     <>
       <div
@@ -31,7 +31,7 @@ export default function CardWithDraw({ color }) {
       <label>
         <input 
           type="number" style={{backgroundColor:"lightBlue",color:"black",width:"200px",height:"30px",borderRadius:"5px"}}
-          value={name}
+          value={withdraw}
           onChange={(e) => setName(e.target.value)}
         />
       </label> &nbsp;

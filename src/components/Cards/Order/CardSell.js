@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Select from "react-select";
+// import Select from "react-select";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import CardRemain from "components/Cards/Order/CardRemain.js";
+
+// import Skeleton from 'react-loading-skeleton'
+// import 'react-loading-skeleton/dist/skeleton.css'
+// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export default function CardSettings({ color }) {
 
@@ -20,14 +24,14 @@ export default function CardSettings({ color }) {
       progress: undefined,
       theme: "colored",
     });
-  const [orderUV, setOrderUV] = useState("");
+  const [orderUV, setOrderUV] = useState([]);
   // const [accountNo, setAccountNo] = useState("");
   // const [orderNo, setOrderNo] = useState("");
-  const [orderQty, setOrderQty] = useState("");
+  const [orderQty, setOrderQty] = useState([]);
   // const [originalOrderNo, setOriginalOrderNo] = useState("");
-  const [issueCode, setIssueCode] = useState();
-  const [orderType, setOrderType] = useState();
-  const [brokerId, setBrokerId] = useState();
+  const [issueCode, setIssueCode] = useState([]);
+  const [orderType, setOrderType] = useState([]);
+  const [brokerId, setBrokerId] = useState([]);
   // const [orderDate, setOrderDate] = useState("");
 
   const [getStocks, setStocks] = useState([]);
@@ -39,6 +43,38 @@ export default function CardSettings({ color }) {
         console.log(res.data.data);
 
         setStocks(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
+
+  const [getBroker, setBrokers] = useState([]);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/brokers-account-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setBrokers(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
+
+  const [getTypes, setTypes] = useState([]);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/types-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setTypes(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
       }
@@ -89,12 +125,9 @@ export default function CardSettings({ color }) {
     setOrderType(event.target.value);
   };
 
-  function showAlert(event: MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <>
+    
       <form onSubmit={GetbrokerAPI} action="/admin/Sell">
         <div className="bg-lightBlue-800 text-white border-lightBlue-700 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
           <div className="rounded-t mb-0 px-6 py-6">
@@ -103,11 +136,7 @@ export default function CardSettings({ color }) {
               <button
                 className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
-                // onClick={notify}
-                onClick={showAlert}
-
-                // href="/admin/Sell"
-                // onClick={(e) => e.preventDefault()}
+                onClick={refresh}
               >
                 Order
                 <ToastContainer
@@ -151,15 +180,28 @@ export default function CardSettings({ color }) {
                 </div>
               </div>
 
-              <div
-                style={{
-                  width: "180px",
-                  marginLeft: "30px",
-                }}
-                onChange={(e) => setBrokerId(e.target.value)}
-                value={brokerId}
-              >
-                <Select placeholder="Select Brokers" options={brokers} />
+              <div className="w-full lg:w-6/12 px-4">
+                <div className="relative w-full mb-3">
+                  <label
+                    className="block uppercase  text-xs font-bold mb-2"
+                    htmlFor="grid-password"
+                  >
+                    Brokers
+                  </label>
+                  <select
+                    className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    // value={brokerId}
+                    onChange={(e) => setBrokerId(e.target.value)}
+                    value={brokerId}
+                  >
+                    {getBroker.map((broker) => (
+                      <option key={broker.id} label={broker.brokerName}>
+                        {" "}
+                        {broker.brokerId}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
             <hr className="mt-2 border-b-1 border-blueGray-300" />
@@ -178,32 +220,7 @@ export default function CardSettings({ color }) {
                     value={issueCode}
                   >
                     {getStocks.map((stock) => (
-                      <option key={stock.id} > {stock.issueCode}</option>
-                    ))}
-                  </select>
-
-                  <label
-                    className="block uppercase  text-xs font-bold mb-2"
-                    htmlFor="grid-password"
-                  >
-                    Brokers
-                  </label>
-                  <select
-                    className=" text-left uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    // value={brokerId}
-                    onChange={(e) => setBrokerId(e.target.value)}
-                        value={brokerId}
-                       
-                  >
-                    {getBroker.map((broker) => (
-                      <option
-                        key={broker.id}
-                        // label={broker.brokerName}
-                        
-                      >
-                        {" "}
-                        {broker.brokerId}
-                      </option>
+                      <option key={stock.id}> {stock.issueCode}</option>
                     ))}
                     
                   </select>
