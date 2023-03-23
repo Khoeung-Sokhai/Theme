@@ -164,13 +164,14 @@ export default function CardSettings({ color }) {
                     className="block uppercase  text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Types
+                   Order Types
                   </label>
                   <select
                     className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     onChange={(e) => setOrderType(e.target.value)}
                     value={orderType}
                   >
+                    <option value="" disabled selected hidden>Choose Type</option>
                     {getTypes.map((types) => (
                       <option key={types.id} label={types.orderName}>
                         {" "}
@@ -196,6 +197,7 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setBrokerId(e.target.value)}
                     value={brokerId}
                   >
+                    <option  value="" disabled selected hidden>Choose Brokers</option>
                     {getBroker.map((broker) => (
                       <option key={broker.id} label={broker.brokerName} >
                         {" "}
@@ -221,6 +223,7 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setIssueCode(e.target.value)}
                     value={issueCode}
                   >
+                    <option value="" disabled selected hidden>Select One</option>
                     {getStocks.map((stock) => (
                       <option key={stock.id}> {stock.issueCode}</option>
                     ))}
@@ -240,7 +243,7 @@ export default function CardSettings({ color }) {
                     className="block uppercase  text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Check Issue code & Symbol
+                    Issue Symbol
                   </label>
 
                   <select
@@ -248,6 +251,7 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setIssueCode(e.target.value)}
                     value={issueCode}
                   >
+                    <option value="" disabled selected hidden>Auto Show</option>
                     {getStocks.map((stock) => (
                       <option key={stock.id} label={stock.issueSymbol}> {stock.issueCode}</option>
                     ))}
