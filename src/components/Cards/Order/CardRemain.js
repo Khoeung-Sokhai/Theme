@@ -41,7 +41,7 @@ export default function CardListTrade({ color }) {
                         (color === "light" ? "text-blueGray-700" : "text-white")
                       }
                     >
-                      Remain data
+                      Main Board
                     </h3>
                   </div>
                 </div>

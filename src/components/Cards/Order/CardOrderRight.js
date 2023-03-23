@@ -168,7 +168,7 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getStocks.sort((a, b) => b.orderUV - a.orderUV).map((stock, index) => (
+              {getStocks.sort((a, b) => b.orderUV - a.orderUV).slice(0,5).map((stock, index) => (
                 <tr key={stock.id}>
                   {(() => {
                     if (stock.orderType == 1) {
@@ -187,7 +187,7 @@ export default function CardTable({ color }) {
                   })()}
                 </tr>
               ))}
-              {getStocks.sort((a, b) => a.orderUV - b.orderUV).map((stock, index) => (
+              {getStocks.sort((a, b) => a.orderUV - b.orderUV).slice(0,5).map((stock, index) => (
                 <tr key={stock.id}>
                   {(() => {
                     if (stock.orderType == 2) {
