@@ -11,10 +11,6 @@ export default function Balance() {
       <div className="flex flex-wrap mt-4">
           <CardBalance color="dark" />
         <div className="xl:w-6/12 mb-12 xl:mb-0 px-4">
-          <CardDeposit color="dark" />
-        </div>
-        <div className="xl:w-6/12 mb-12 xl:mb-0 px-4">
-           <CardWithDraw color="dark" />
         </div>
       </div>
     </>
