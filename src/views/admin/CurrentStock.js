@@ -2,12 +2,13 @@ import React from "react";
 
 // components
 
-// import CardLineChart from "components/Cards/CardLineChart.js";
-// import CardBarChart from "components/Cards/CardBarChart.js";
-import CardRecent from "components/Cards/CurrentStock/CardRecent.js";
-import CardCurrentQuo from "components/Cards/CurrentStock/CardCurrentQuo.js";
-import CardTradeInfo from "components/Cards/CurrentStock/CardTradeInfo.js";
-import CardHistoryPrice from "components/Cards/CardHistoryPrice.js";
+import CardLineChart from "components/Cards/CardLineChart";
+import CardBarChart from "components/CardBarChart";
+import CardRecent from "components/Cards/CurrentStock/CardRecent";
+import CardCurrentQuo from "components/Cards/CurrentStock/CardCurrentQuo";
+import CardTradeInfo from "components/Cards/CurrentStock/CardTradeInfo";
+import CardHistoryPrice from "components/Cards/CurrentStock/CardHistoryPrice";
+import CardMix from 'components/Cards/CardMix';
 
 export default function CurrentStock() {
   return (
@@ -26,6 +27,9 @@ export default function CurrentStock() {
         <div className="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
           <CardRecent />
           <CardHistoryPrice/>
+          <CardLineChart/>
+          <CardBarChart/>
+          <CardMix/>
         </div>
         <div className="w-full xl:w-4/12 px-4">
         </div>

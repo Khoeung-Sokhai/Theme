@@ -84,7 +84,7 @@ export default function CardListTrade({ color }) {
                     </tr>
                   </thead>
                   <tbody>
-                  {getStocks.sort((a, b) => a.orderQty - b.orderQty).slice(0,5).map((stock) =>
+                  {getStocks.sort((a, b) => a.orderQty - b.orderQty).map((stock) =>
                     <tr key={stock.id}>
                       <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                       {stock.issueCode}

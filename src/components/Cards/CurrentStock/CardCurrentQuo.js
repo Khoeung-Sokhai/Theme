@@ -1,8 +1,26 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import axios from "axios";
 
 // components
 
 export default function CardCurrentQuo({color}) {
+  const [getQuo, setQuo] = useState([]);
+
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/broker-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setQuo(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 sshadow-2xl rounded-lg">
@@ -21,7 +39,9 @@ export default function CardCurrentQuo({color}) {
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead className="thead-light">
-              <tr>
+
+            
+              <tr  >
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                 Sell Remaing Quantity
                 </th>
@@ -35,17 +55,18 @@ export default function CardCurrentQuo({color}) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="text-white text-left border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                Buy Remaining Quantity
+            {getQuo.map((quo) => 
+              <tr key={quo.id}>
+                <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                {quo.orderQty}
                 </td>
                 <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                {quo.orderUV}៛
                 </td>
                 <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  <span className="mr-2">60%</span>
+                {quo.orderType}
                 </td>
-              </tr>
+              </tr>)}
             
             </tbody>
           </table>

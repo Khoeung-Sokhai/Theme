@@ -13,7 +13,6 @@ export default function Settings() {
         {/* <LayoutOrder /> */}
         <div className="w-full px-4">
           <ContactUs color="dark"/>
-          
         </div>
        
       </div>
