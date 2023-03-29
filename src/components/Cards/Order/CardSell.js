@@ -10,21 +10,20 @@ import CardRemain from "components/Cards/Order/CardRemain.js";
 // import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export default function CardSettings({ color }) {
-
   var date = new Date();
   const refresh = () => window.location.reload(true);
 
-  // const notify = () =>
-  //   toast.success("Make Order Successfully...🤪", {
-  //     position: "top-center",
-  //     autoClose: 2000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "colored",
-  //   });
+  const notify = () =>
+    toast.success("Make Order Successfully...🤪", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   const [orderUV, setOrderUV] = useState([]);
   // const [accountNo, setAccountNo] = useState("");
   // const [orderNo, setOrderNo] = useState("");
@@ -133,10 +132,11 @@ export default function CardSettings({ color }) {
           <div className="rounded-t mb-0 px-6 py-6">
             <div className="text-center flex justify-between">
               <h6 className=" text-xl font-bold uppercase">Make Order</h6>
-              
+
               <button
                 className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
+                // onClick={notify}
                 onClick={refresh}
               >
                 Order
@@ -160,18 +160,20 @@ export default function CardSettings({ color }) {
             <div className="flex flex-wrap mt-4">
               <div className="w-full lg:w-6/12 px-4">
                 <div className="relative w-full mb-3">
-                <label
+                  <label
                     className="block uppercase  text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                   Order Types
+                    Order Types
                   </label>
                   <select
                     className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     onChange={(e) => setOrderType(e.target.value)}
                     value={orderType}
                   >
-                    <option value="" disabled selected hidden>Choose Type</option>
+                    <option value="" disabled selected hidden>
+                      Choose Type
+                    </option>
                     {getTypes.map((types) => (
                       <option key={types.id} label={types.orderName}>
                         {" "}
@@ -196,7 +198,9 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setBrokerId(e.target.value)}
                     value={brokerId}
                   >
-                    <option  value="" disabled selected hidden>Choose Brokers</option>
+                    <option value="" disabled selected hidden>
+                      Choose Brokers
+                    </option>
                     {getBroker.map((broker) => (
                       <option key={broker.id} label={broker.brokerName}>
                         {" "}
@@ -222,19 +226,15 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setIssueCode(e.target.value)}
                     value={issueCode}
                   >
-                    <option value="" disabled selected hidden>Select One</option>
+                    <option value="" disabled selected hidden>
+                      Select One
+                    </option>
                     {getStocks.map((stock) => (
                       <option key={stock.id}> {stock.issueCode}</option>
                     ))}
-                    
                   </select>
-
-                 
-                 
-
                 </div>
               </div>
-             
 
               <div className="w-full lg:w-6/12 px-4">
                 <div className="relative w-full mb-3">
@@ -250,14 +250,16 @@ export default function CardSettings({ color }) {
                     onChange={(e) => setIssueCode(e.target.value)}
                     value={issueCode}
                   >
-                    <option value="" disabled selected hidden>Auto Show</option>
+                    <option value="" disabled selected hidden>
+                      Auto Show
+                    </option>
                     {getStocks.map((stock) => (
-                      <option key={stock.id} label={stock.issueSymbol}> {stock.issueCode}</option>
+                      <option key={stock.id} label={stock.issueSymbol}>
+                        {" "}
+                        {stock.issueCode}
+                      </option>
                     ))}
-                    
                   </select>
-
-                 
                 </div>
               </div>
               <div className="w-full lg:w-6/12 px-4">
@@ -277,7 +279,6 @@ export default function CardSettings({ color }) {
                     required
                     placeholder="Quantity..."
                   />
-              
                 </div>
               </div>
               <div className="w-full lg:w-6/12 px-4">

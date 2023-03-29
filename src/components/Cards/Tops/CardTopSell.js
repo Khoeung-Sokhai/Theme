@@ -10,7 +10,7 @@ export default function CardTop({ color }) {
   const [getStocks, setStocks] = useState([]);
   useEffect(() => {
     async function fetchStock() {
-      const URL = 'http://localhost:8080/api/top-info';
+      const URL = 'http://localhost:8080/api/best-info';
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -40,7 +40,7 @@ export default function CardTop({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Top Broker
+                Top Sell
               </h3>
             </div>
           </div>
@@ -59,29 +59,9 @@ export default function CardTop({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 ID
+                 Stock
                 </th>
                 <th  
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >
-                 Sell
-                </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >
-                  Quality
-                </th>
-                <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
@@ -99,40 +79,35 @@ export default function CardTop({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Buy
+                  Quality
                 </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
-                >quality</th>
+               
+               
               </tr>
               
             </thead>
             <tbody>
-            {getStocks.map((stock) => 
+            {getStocks.map((stock,index) => 
               <tr key = {stock.id}>
-                <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                {stock.id}.
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs whitespace-nowrap p-4">
-                 {stock.sell}
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs whitespace-nowrap p-4">
-                {stock.sell_quality}
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs whitespace-nowrap p-4">
-                {stock.price}
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                {stock.buy}
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                {stock.buy_quality}
-                </td>
+                 {(() => {
+                      if (stock.bestType == 1) {
+                        return (
+                          <>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                              {stock.bestStock}
+                            </td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                              {stock.bestQty}
+                            </td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                              {stock.bestUV}
+                            </td>
+                          </>
+                        );
+                      }
+                    })()}
+              
+                
               </tr>
             )}
             </tbody>
