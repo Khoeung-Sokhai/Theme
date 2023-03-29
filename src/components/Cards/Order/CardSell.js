@@ -13,17 +13,17 @@ export default function CardSettings({ color }) {
   var date = new Date();
   const refresh = () => window.location.reload(true);
 
-  const notify = () =>
-    toast.success("Make Order Successfully...🤪", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+  // const notify = () =>
+  //   toast.success("Make Order Successfully...🤪", {
+  //     position: "top-center",
+  //     autoClose: 2000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "colored",
+  //   });
   const [orderUV, setOrderUV] = useState([]);
   // const [accountNo, setAccountNo] = useState("");
   // const [orderNo, setOrderNo] = useState("");
