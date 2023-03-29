@@ -18,6 +18,7 @@
     "gulp-append-prepend": "1.0.8",
     "loading": "^1.13.3",
     "node": "^16.19.1",
+    "package-name": "^0.1.0",
     "postcss": "8.2.8",
     "react": "^17.0.1",
     "react-apexcharts": "^1.4.0",

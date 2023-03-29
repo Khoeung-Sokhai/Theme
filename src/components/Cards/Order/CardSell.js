@@ -195,6 +195,7 @@ export default function CardSettings({ color }) {
                   <select
                     className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     // value={brokerId}
+                    
                     onChange={(e) => setBrokerId(e.target.value)}
                     value={brokerId}
                   >
@@ -202,7 +203,7 @@ export default function CardSettings({ color }) {
                       Choose Brokers
                     </option>
                     {getBroker.map((broker) => (
-                      <option key={broker.id} label={broker.brokerName}>
+                      <option key={broker.id} label={broker.brokerName} >
                         {" "}
                         {broker.brokerId}
                       </option>
