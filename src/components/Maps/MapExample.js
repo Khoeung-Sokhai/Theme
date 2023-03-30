@@ -9,7 +9,7 @@ function MapExample() {
     let lng = "104.9247529685894";
     const myLatlng = new google.maps.LatLng(lat, lng);
     const mapOptions = {
-      zoom: 12,
+      zoom: 15,
       center: myLatlng,
       scrollwheel: false,
       zoomControl: true,

@@ -13,28 +13,11 @@ export default function CardSettings({ color }) {
 
   var date = new Date();
   const refresh = () => window.location.reload(true);
-
-  // const notify = () =>
-  //   toast.success("Make Order Successfully...🤪", {
-  //     position: "top-center",
-  //     autoClose: 2000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "colored",
-  //   });
   const [orderUV, setOrderUV] = useState([]);
-  // const [accountNo, setAccountNo] = useState("");
-  // const [orderNo, setOrderNo] = useState("");
   const [orderQty, setOrderQty] = useState([]);
-  // const [originalOrderNo, setOriginalOrderNo] = useState("");
   const [issueCode, setIssueCode] = useState([]);
   const [orderType, setOrderType] = useState([]);
   const [brokerId, setBrokerId] = useState([]);
-  // const [orderDate, setOrderDate] = useState("");
-
   const [getStocks, setStocks] = useState([]);
   useEffect(() => {
     async function fetchStock() {
@@ -88,14 +71,12 @@ export default function CardSettings({ color }) {
     var data = JSON.stringify({
       orderUV: orderUV,
       accountNo: "000001",
-      // orderNo: orderNo,
       orderQty: orderQty,
       originalOrderNo: "1",
       brokerId: brokerId,
       orderDate: date,
       issueCode: issueCode,
       orderType: orderType,
-      // issueName: issueName,
     });
 
     var config = {
