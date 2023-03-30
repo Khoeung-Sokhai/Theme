@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {useState,useEffect} from "react";
+import axios from "axios";
 // components
 
 
@@ -21,6 +22,21 @@ export default function CardTable({ color }) {
   //   }
   //   fetchStock();
   // }, []);
+  const [getStocks, setStocks] = useState([]);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/issue-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setStocks(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
   
   return (
     <>
@@ -41,10 +57,33 @@ export default function CardTable({ color }) {
               >
                Current Market
               </h3>
+              
             </div>
+            <div style={{width:"200px"}} className=" px-4">
+                <div className="relative w-full mb-3">
+                  <select
+                    className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                    // value={brokerId}
+                    
+                    // onChange={(e) => setBrokerId(e.target.value)}
+                    // value={brokerId}
+                  >
+                    <option value="" disabled selected hidden>
+                      Choose Stock
+                    </option>
+                    {getStocks.map((stock) => (
+                      <option key={stock.id} label={stock.issueSymbol} >
+                        {" "}
+                        {stock.issueNo}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
           </div>
         </div>
-        <div className="block w-full overflow-x-auto">
+        
+        <div className="block w-full ">
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>

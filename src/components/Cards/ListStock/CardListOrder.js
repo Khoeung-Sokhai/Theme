@@ -39,7 +39,7 @@ export default function CardListOrder({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-               List Trade
+               List Order
               </h3>
             </div>
           </div>

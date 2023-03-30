@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
-import UserDropdown from "components/Dropdowns/UserDropdown.js";
+// import UserDropdown from "components/Dropdowns/UserDropdown.js";
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
@@ -29,8 +29,8 @@ export default function Sidebar() {
             
                       <img style={{marginLeft:"60px", height:"50px"}}
                         alt="..."
-                        src={"https://cdn-icons-png.flaticon.com/128/2349/2349057.png"}
-                        className="shadow-xl rounded-full  align-middle border-none "
+                        src={"https://www.pngkey.com/png/full/236-2366524_cambodia-securities-exchange.png"}
+                        className="shadow-xl rounded  align-middle border-none "
                       />
                    
           </Link>
@@ -228,7 +228,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-layer-group mr-2 text-sm " +
+                      "fas fa-chart-line mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/ListStock") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -323,7 +323,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-credit-card mr-2 text-sm " +
+                      "fas fa-book mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/about-us") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
@@ -344,7 +344,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-credit-card mr-2 text-sm " +
+                      "fas fa-comment-dots mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/contact-us") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")

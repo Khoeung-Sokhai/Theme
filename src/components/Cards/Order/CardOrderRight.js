@@ -84,17 +84,34 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                  10000
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                  9000
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                  8000
-                </td>
-              </tr>
+              {getStocks
+                .sort((a, b) => b.orderUV - a.orderUV)
+                .slice(0, 1)
+                .map((stock) => (
+                  <tr key={stock.id}>
+                    <>
+                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                        {stock.orderUV/0.1}
+                      </td>
+                      {getStocks
+                        .sort((a, b) => b.orderUV - a.orderUV)
+                        .slice(0,1)
+                        .map((stock) => (
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                            {stock.orderUV}
+                          </td>
+                        ))}
+                      {getStocks
+                        .sort((a, b) => b.orderUV - a.orderUV)
+                        .slice(0,1)
+                        .map((stock) => (
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                            {stock.orderUV*0.1}
+                          </td>
+                        ))}
+                    </>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -168,45 +185,52 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getStocks.sort((a, b) => b.orderUV - a.orderUV).slice(0,5).map((stock, index) => (
-                <tr key={stock.id}>
-                  {(() => {
-                    if (stock.orderType == 1) {
-                      return (
-                        <>
+              {getStocks
+                .sort((a, b) => b.orderUV - a.orderUV)
+                .slice(0, 100)
+                .map((stock) => (
+                  <tr key={stock.id}>
+                    {(() => {
+                      if (stock.orderType == 1) {
+                        return (
+                          <>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                              {stock.orderQty}
+                            </td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                              {stock.orderUV}
+                            </td>
+                          </>
+                        );
+                      }
+                    })()}
+                  </tr>
+                ))}
+
+              {getStocks
+                .sort((a, b) => b.orderUV - a.orderUV)
+                .slice(0, 100)
+                .map((stock) => (
+                  <tr key={stock.id}>
+                    {(() => {
+                      if (stock.orderType == 2) {
+                        
+                        return (
+                          <>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"></td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                              {stock.orderUV}
+                            </td>
     
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {stock.orderQty}
-                          </td>
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {stock.orderUV}
-                          </td>
-                        </>
-                      );
-                    } 
-                  })()}
-                </tr>
-              ))}
-              {getStocks.sort((a, b) => a.orderUV - b.orderUV).slice(0,5).map((stock, index) => (
-                <tr key={stock.id}>
-                  {(() => {
-                    if (stock.orderType == 2) {
-                      return (
-                        <>
-                         
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"></td>
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {stock.orderUV}
-                          </td>
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {stock.orderQty}
-                          </td>
-                        </>
-                      );
-                    }
-                  })()}
-                </tr>
-              ))}
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                              {stock.orderQty}
+                            </td>
+                          </>
+                        );
+                      }
+                    })()}
+                  </tr>
+                ))}
 
               {/* {getStocks.slice(5, 10).map((stock, index) => (
                 <tr key={stock.id}>
@@ -224,10 +248,6 @@ export default function CardTable({ color }) {
                               
               </tr>
               ))} */}
-     
-             
-             
-             
             </tbody>
           </table>
         </div>
