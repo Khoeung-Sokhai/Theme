@@ -62,7 +62,7 @@ export default function CardCurrentQuo({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getQuo.map((quo) => (
+              {getQuo.slice(0, 14).map((quo) => (
                 <tr key={quo.id}>
                   <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                     {quo.orderQty}
