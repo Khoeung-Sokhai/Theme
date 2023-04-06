@@ -19,26 +19,30 @@ export default function CurrentMarket() {
     <>
       <div className="flex flex-wrap mt-4">
       <div className="w-full lg:w-6/12 px-4">
-          <CardValuation color="dark" />
+          <CardWeekData  color="dark" />
         </div>
+     
        
         <div className="w-full lg:w-6/12 px-4">
           <CardPerformance color="dark" />
         </div> 
-      
+        <div className="w-full lg:w-6/12 px-4">
+          <CardValuation color="dark" />
+        </div>
+        {/* <div  className="w-full  px-4">
+          <CardIPO color="dark" />
+        </div> */}
+
         <div className="w-full lg:w-10/12 px-4  ">
+          
           <CardStatistic color="dark"/>
         </div> 
-         <div className="w-full  px-4">
-          <CardWeekData  color="dark" />
-        </div>
-        <div className="w-full lg:w-12/12 px-4">
-          <CardIPO color="dark" />
-        </div>
+         
         
-        <div className="w-full lg:w-12/12 px-4">
+        {/* <div style={{width:"800px"}} className="w-full  px-4">
           <CardCompany color="dark" />
-        </div>
+        </div> */}
+      
     
       </div>
     </>

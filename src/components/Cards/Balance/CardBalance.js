@@ -20,7 +20,7 @@ export default function CardBalance() {
     }
     fetchStock();
   }, []);
-  function GetbrokerAPI(e) {
+  function GetBalanceAPI(e) {
     e.preventDefault();
     var data = JSON.stringify({
       balance: balance,
@@ -81,14 +81,13 @@ export default function CardBalance() {
                           <h1> Account Balance: {stock.balance-stock.amount}</h1>
             ))} */}
               
-              <br />
+              
 
-              <form onSubmit={GetbrokerAPI}>
+              <form onSubmit={GetBalanceAPI}>
                 <label htmlFor="amount">Deposit Amount:</label>
                 <input
                   type="number"
-                  id="amount"
-                  name="amount"
+              
                   style={{
                     color: "black",
                     borderRadius: "15px",
@@ -99,8 +98,7 @@ export default function CardBalance() {
                 />
                 <input
                   type="number"
-                  id="amount"
-                  name="amount"
+                  
                   style={{
                     color: "black",
                     borderRadius: "15px",

@@ -1,10 +1,8 @@
-
 import PropTypes from "prop-types";
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 // components
-
 
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
@@ -27,7 +25,7 @@ export default function CardTable({ color }) {
 
   useEffect(() => {
     async function fetchStock() {
-      const URL = 'http://localhost:8080/api/buy-info';
+      const URL = "http://localhost:8080/api/buy-info";
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -39,7 +37,7 @@ export default function CardTable({ color }) {
     }
     fetchStock();
   }, []);
-  
+
   return (
     <>
       <div
@@ -67,9 +65,7 @@ export default function CardTable({ color }) {
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
-                
-                
-                <th  
+                <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
@@ -77,11 +73,11 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 Avg price
+                  Avg price
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
@@ -91,57 +87,58 @@ export default function CardTable({ color }) {
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 low
+                  low
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                 % change
+                  % change
                 </th>
                 <th
                   className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
                     (color === "light"
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >value day</th>
+                >
+                  value day
+                </th>
               </tr>
-              
             </thead>
             <tbody>
-            {/* .slice(0,2) */}
-               {getStocks.map((stock,index) => 
-              <tr key = {index}>
+              {/* .slice(0,2) */}
+              {/* {getStocks.map((stock,index) =>  */}
+              <tr>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                {index+1}
+                 12
                 </td>
 
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-               {Math.max}
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
+                  123
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                111
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
+                  111
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 111
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
+                  111
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                 111
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4 ">
+                  111
                 </td>
               </tr>
-              )}
+              {/* )} */}
             </tbody>
           </table>
         </div>

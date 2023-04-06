@@ -10,12 +10,28 @@ export default function CardTop({ color }) {
   const [getStocks, setStocks] = useState([]);
   useEffect(() => {
     async function fetchStock() {
-      const URL = 'http://localhost:8080/api/best-info';
+      const URL = 'http://localhost:8080/api/broker-info';
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
 
         setStocks(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
+  
+  const [getStock, setStock] = useState([]);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = 'http://localhost:8080/api/issue-info';
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setStock(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
       }
@@ -42,6 +58,7 @@ export default function CardTop({ color }) {
               >
                 Top Sell
               </h3>
+             
             </div>
           </div>
         </div>
@@ -90,24 +107,22 @@ export default function CardTop({ color }) {
             {getStocks.map((stock,index) => 
               <tr key = {stock.id}>
                  {(() => {
-                      if (stock.bestType == 1) {
+                      if (stock.orderType == 2) {
                         return (
                           <>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                              {stock.bestStock}
+                              {stock.issueSymbol}
                             </td>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                              {stock.bestQty}
+                              {stock.orderQty}
                             </td>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                              {stock.bestUV}
+                              {stock.orderUV}
                             </td>
                           </>
                         );
                       }
-                    })()}
-              
-                
+                    })()} 
               </tr>
             )}
             </tbody>

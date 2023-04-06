@@ -37,18 +37,33 @@ export default function CardTable({ color }) {
     }
     fetchStock();
   }, []);
+  const [getOrder, setOrder] = useState([]);
+  useEffect(() => {
+    async function fetchStock() {
+      const URL = "http://localhost:8080/api/broker-info";
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
+
+        setOrder(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchStock();
+  }, []);
   
   return (
     <>
       <div
         className={
-          " relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
+          "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded " +
           (color === "light" ? "bg-white" : "bg-lightBlue-900 text-white")
         }
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-center uppercase">
               <h3
                 className={
                   "font-semibold text-lg " +
@@ -83,7 +98,7 @@ export default function CardTable({ color }) {
           </div>
         </div>
         
-        <div className="block w-full ">
+        <div className="block w-full overflow-x-auto">
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
@@ -199,132 +214,45 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody  style={{borderTop:"1px solid gray"}}>
-              
-              <tr style={{borderBottom:"1px solid gray"}}>  
-                <th style={{borderRight:"1px solid gray"}} rowSpan={2}  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
+            {getStocks.slice(0,5).map((stock) => (
+              <><tr key={stock.id} style={{ borderBottom: "1px solid gray" }}>
+                <th style={{ borderRight: "1px solid gray" }} rowSpan={2} className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  {stock.issueSymbol}
                 </th>
-                <td  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 Lol
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
-                </td>               
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 Haha
-                </td>               
-              </tr>
-
-              <tr style={{borderBottom:"1px solid gray"}}>
-                
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   100
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
+                  haha
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   Lol
                 </td>
-                <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
+                  200
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 haha
+                  Haha
                 </td>
-              </tr>
-              
-              <tr style={{borderBottom:"1px solid gray"}}>  
-                <th style={{borderRight:"1px solid gray"}} rowSpan={2}  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
-                </th>
-                <td  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 Lol
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
-                </td>               
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 Haha
-                </td>               
-              </tr>
+              </tr><tr style={{ borderBottom: "1px solid gray" }}>
 
-              <tr style={{borderBottom:"1px solid gray"}}>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Lol
-                </td>
-                <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 haha
-                </td>
-              </tr>
-              
-              <tr style={{borderBottom:"1px solid gray"}}>  
-                <th style={{borderRight:"1px solid gray"}} rowSpan={2}  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  $2,500 USD
-                </th>
-                <td  className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 Lol
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
-                </td>               
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 Haha
-                </td>               
-              </tr>
-
-              <tr style={{borderBottom:"1px solid gray"}}>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  100
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                 haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Lol
-                </td>
-                <td className="border-t-0  align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                 haha
-                </td>
-              </tr>
-            
-
-             
-            
-             
-             
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    100
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    haha
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    Lol
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
+                    200
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
+                    Haha
+                  </td>
+                </tr></>
+                ))} 
             </tbody>
           </table>
         </div>
