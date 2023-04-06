@@ -18,7 +18,7 @@ import CurrentMarket from "views/admin/CurrentMarket.js";
 import Tops from "views/admin/Tops.js";
 import StockInfo from "views/admin/StockInfo.js";
 
-import Buy from "views/admin/Buy.js";
+import Home from "views/admin/Home.js";
 import Sell from "views/admin/Sell.js";
 import Change from "views/admin/Change.js";
 import Cancel from "views/admin/Cancel.js";
@@ -52,7 +52,7 @@ export default function Admin() {
             <Route path="/admin/Tops" exact component={Tops} />
            
             <Route path="/admin/Sell" exact component={Sell} />
-            <Route path="/admin/Buy" exact component={Buy} />
+            <Route path="/admin/Home" exact component={Home} />
             <Route path="/admin/Change" exact component={Change} />
             <Route path="/admin/Cancel" exact component={Cancel} />
             <Route path="/admin/Balance" exact component={Balance} />

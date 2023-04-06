@@ -7,7 +7,7 @@ export default function CardRecent() {
 
   useEffect(() => {
     async function fetchRecent() {
-      const URL = 'http://localhost:8080/api/recent-info';
+      const URL = 'http://localhost:8080/api/recently-info';
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -57,30 +57,38 @@ export default function CardRecent() {
               </tr>
             </thead>
             <tbody>
-            {getRecent.map((recent) => 
-            <tr key={recent.id}>
+            {getRecent.map((recently) => 
+            <tr   key={recently.id}>
+          
                 <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {recent.time}
+                {recently.time}
+
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {recent.execution_price}៛
+                {recently.executionPrice}៛
+          
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {recent.change}
+                {recently.change}
+             
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {recent.change_}%
+                {recently.changePercentage}%
+              
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {recent.trade_volume}
+                {recently.tradeVolume}
+               
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {recent.trade_volume}
+                  {recently.tradeValue} KHR
+                
                 </td>
 
-              </tr>)}
-
+            </tr>
+              )} 
+              
             </tbody>
           </table>
         </div>
