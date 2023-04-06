@@ -1,24 +1,24 @@
 import React, {useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 // components
 
 export default function CardRecent() {
-  // const [getRecent, setRecent] = useState([]);
+  const [getRecent, setRecent] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchRecent() {
-  //     const URL = 'http://localhost:8080/api/recent-info';
-  //     try {
-  //       const res = await axios.get(URL);
-  //       console.log(res.data.data);
+  useEffect(() => {
+    async function fetchRecent() {
+      const URL = 'http://localhost:8080/api/recently-info';
+      try {
+        const res = await axios.get(URL);
+        console.log(res.data.data);
 
-  //       setRecent(Object.values(res.data.data));
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchRecent();
-  // }, []);
+        setRecent(Object.values(res.data.data));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchRecent();
+  }, []);
   return (
 
       <div className="text-white relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 shadow-2xl rounded-lg">
@@ -57,131 +57,38 @@ export default function CardRecent() {
               </tr>
             </thead>
             <tbody>
-            {/* {getRecent.map((recent) =>  */}
-            <tr >
-            {/* key={recent.id} */}
+            {getRecent.map((recently) => 
+            <tr   key={recently.id}>
+          
                 <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.time} */}
-    	          10:12AM
-              
+                {recently.time}
+
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.execution_price}៛ */}
-                11000 KHR
+                {recently.executionPrice}៛
+          
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change} */}
-                50
+                {recently.change}
+             
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change_}% */}
-                0.5 %
+                {recently.changePercentage}%
+              
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.trade_volume} */}
-                30
+                {recently.tradeVolume}
+               
                 </td>
                 <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {/* {recent.trade_volume} */}
-                  20
+                  {recently.tradeValue} KHR
+                
                 </td>
 
             </tr>
-              {/* )} */}
-              <tr >
-            {/* key={recent.id} */}
-                <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.time} */}
-    	          10:12AM
+              )} 
               
-                </th>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.execution_price}៛ */}
-                11000 KHR
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change} */}
-                50
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change_}% */}
-                0.5 %
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.trade_volume} */}
-                30
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {/* {recent.trade_volume} */}
-                  20
-                </td>
-
-            </tr>
-              {/* )} */}
-              <tr >
-            {/* key={recent.id} */}
-                <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.time} */}
-    	          10:12AM
-              
-                </th>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.execution_price}៛ */}
-                11000 KHR
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change} */}
-                50
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change_}% */}
-                0.5 %
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.trade_volume} */}
-                30
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {/* {recent.trade_volume} */}
-                  20
-                </td>
-
-            </tr>
-              {/* )} */}
-              <tr >
-            {/* key={recent.id} */}
-                <th  className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.time} */}
-    	          10:12AM
-              
-                </th>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.execution_price}៛ */}
-                11000 KHR
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change} */}
-                50
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.change_}% */}
-                0.5 %
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {/* {recent.trade_volume} */}
-                30
-                </td>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  {/* {recent.trade_volume} */}
-                  20
-                </td>
-
-            </tr>
-              {/* )} */}
             </tbody>
           </table>
         </div>

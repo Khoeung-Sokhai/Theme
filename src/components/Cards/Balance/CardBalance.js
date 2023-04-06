@@ -121,3 +121,18 @@ export default function CardBalance() {
     </>
   );
 }
+// function balanceForBrokerSystem(brokerData) {
+//   let balance = brokerData.balance;
+
+//   for (let i = 0; i < brokerData.transactions.length; i++) {
+//     let transaction = brokerData.transactions[i];
+
+//     if (transaction.type === 'deposit') {
+//       balance += transaction.amount;
+//     } else if (transaction.type === 'withdrawal') {
+//       balance -= transaction.amount;
+//     }
+//   }
+
+//   return balance;
+// }
