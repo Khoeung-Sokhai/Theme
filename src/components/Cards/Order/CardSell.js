@@ -69,7 +69,7 @@ export default function CardSettings({ color }) {
     e.preventDefault();
     var data = JSON.stringify({
       orderUV: orderUV,
-      accountNo: "000001",
+      accountNo: "1",
       orderQty: orderQty,
       originalOrderNo: "1",
       brokerId: brokerId,

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+
 // components
 
 export default function CardTable({ color }) {
@@ -22,6 +23,10 @@ export default function CardTable({ color }) {
     fetchStock();
   }, []);
 
+  var ytd = new Date();
+
+  ytd.setDate(ytd.getDate() - 1);
+
   return (
     <>
       <div
@@ -39,7 +44,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Base Price
+                Base Price 
               </h3>
             </div>
           </div>
@@ -85,31 +90,29 @@ export default function CardTable({ color }) {
             </thead>
             <tbody>
               {getStocks
-                .sort((a, b) => b.orderUV - a.orderUV)
-                .slice(0, 1)
+                .sort((a, b) => b.orderNo - a.orderNo)
+                .slice(4,5)
                 .map((stock) => (
                   <tr key={stock.id}>
-                    <>
-                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                        {stock.orderUV/0.1}
-                      </td>
-                      {getStocks
-                        .sort((a, b) => b.orderUV - a.orderUV)
-                        .slice(0,1)
-                        .map((stock) => (
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                            {stock.orderUV}
-                          </td>
-                        ))}
-                      {getStocks
-                        .sort((a, b) => b.orderUV - a.orderUV)
-                        .slice(0,1)
-                        .map((stock) => (
-                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                            {stock.orderUV*0.1}
-                          </td>
-                        ))}
-                    </>
+                    {(() => {
+                      if (stock.orderDt == ytd.toISOString().substring(0, 10)) {
+                        return (
+                          <>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV - -0.1 * stock.orderUV}
+                            </td>
+
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV}
+                            </td>
+
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV - 0.1 * stock.orderUV}
+                            </td>
+                          </>
+                        ); 
+                       }
+                    })()} 
                   </tr>
                 ))}
             </tbody>
@@ -179,9 +182,7 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >
-                  buy
-                </th>
+                ></th>
               </tr>
             </thead>
             <tbody>
@@ -214,14 +215,13 @@ export default function CardTable({ color }) {
                   <tr key={stock.id}>
                     {(() => {
                       if (stock.orderType == 2) {
-                        
                         return (
                           <>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"></td>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                               {stock.orderUV}
                             </td>
-    
+
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                               {stock.orderQty}
                             </td>
