@@ -39,7 +39,7 @@ export default function ContactUs({ color }) {
       email: email,
       message: message,
       // id: useId,
-      accountNo: "000001",
+      accountNo: "1",
     });
 
     var config = {
@@ -102,9 +102,7 @@ export default function ContactUs({ color }) {
                             marginTop: "-10px",
                           }}
                           alt="..."
-                          src={
-                            "https://o.remove.bg/downloads/b81596e6-cd7b-4e0e-be2b-3f910005ceee/images-removebg-preview.png"
-                          }
+                          src={require("assets/img/1.png").default}
                           className=" rounded   border-none  "
                         />
                       </div>

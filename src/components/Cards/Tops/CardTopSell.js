@@ -107,7 +107,7 @@ export default function CardTop({ color }) {
             {getStocks.map((stock,index) => 
               <tr key = {stock.id}>
                  {(() => {
-                      if (stock.orderType == 2) {
+                      if (stock.orderType == 1) {
                         return (
                           <>
                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">

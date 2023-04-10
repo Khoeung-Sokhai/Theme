@@ -91,6 +91,7 @@ export default function CardTable({ color }) {
             <tbody>
               {getStocks
                 .sort((a, b) => b.orderNo - a.orderNo)
+                .slice(4,5)
                 .map((stock) => (
                   <tr key={stock.id}>
                     {(() => {
