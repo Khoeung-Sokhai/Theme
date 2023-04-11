@@ -63,18 +63,18 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-left uppercase">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-center   uppercase">
               <h3
                 className={
                   "font-semibold text-lg " +
-                  (color === "light" ? "text-blueGray-700" : "text-white")
+                  (color === "light" ? "text-blueGray-700" : "text-yellow-400")
                 }
               >
-               Current Market
+               Real Time Quotation
               </h3>
               
             </div>
-            <div style={{width:"200px"}} className=" px-4">
+            {/* <div style={{width:"200px"}} className=" px-4">
                 <div className="relative w-full mb-3">
                   <select
                     className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -94,7 +94,7 @@ export default function CardTable({ color }) {
                     ))}
                   </select>
                 </div>
-              </div>
+              </div> */}
           </div>
         </div>
         
