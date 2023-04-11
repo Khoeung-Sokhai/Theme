@@ -10,6 +10,20 @@ import CardRemain from "components/Cards/Order/CardRemain.js";
 // import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export default function CardSettings({ color }) {
+  const notify = () =>  toast.success('Make order successfully...', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+  
+  // Reload the page after the toast message is displayed
+ 
+
   var date = new Date();
   const refresh = () => window.location.reload(true);
   const [orderUV, setOrderUV] = useState([]);
@@ -24,7 +38,6 @@ export default function CardSettings({ color }) {
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
-
         setStocks(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
@@ -76,6 +89,7 @@ export default function CardSettings({ color }) {
       orderDate: date,
       issueCode: issueCode,
       orderType: orderType,
+
     });
 
     var config = {
@@ -91,10 +105,16 @@ export default function CardSettings({ color }) {
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
+        // window.location.reload(notify);
+        setTimeout(function() {
+          window.location.reload(notify);
+        }, 2000);
       })
       .catch(function (error) {
         console.log(error);
       });
+     
+   
   }
   const handleChange = (event) => {
     setOrderUV(event.target.value);
@@ -117,8 +137,8 @@ export default function CardSettings({ color }) {
               <button
                 className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
-                // onClick={notify}
-                onClick={refresh}
+                onClick={notify}
+                // onClick={refresh}
               >
                 Order
                 <ToastContainer

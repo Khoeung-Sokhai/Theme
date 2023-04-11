@@ -2,30 +2,33 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
+import { get } from "https";
 
 // components
 
 export default function CardTable({ color }) {
   const [getStocks, setStocks] = useState([]);
+  var ytd = new Date();
+
+  ytd.setDate(ytd.getDate() - 1);
 
   useEffect(() => {
     async function fetchStock() {
       const URL = "http://localhost:8080/api/broker-info";
+
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
-
-        setStocks(Object.values(res.data.data));
+        
+          setStocks(Object.values(res.data.data));
+        
+        
       } catch (error) {
         console.log(error);
       }
     }
     fetchStock();
   }, []);
-
-  var ytd = new Date();
-
-  ytd.setDate(ytd.getDate() - 1);
 
   return (
     <>
@@ -44,7 +47,7 @@ export default function CardTable({ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Base Price 
+                Base Price
               </h3>
             </div>
           </div>
@@ -91,28 +94,20 @@ export default function CardTable({ color }) {
             <tbody>
               {getStocks
                 .sort((a, b) => b.orderNo - a.orderNo)
-                .slice(4,5)
+                
                 .map((stock) => (
                   <tr key={stock.id}>
-                    {(() => {
-                      if (stock.orderDt == ytd.toISOString().substring(0, 10)) {
-                        return (
-                          <>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                              {stock.orderUV - -0.1 * stock.orderUV}
-                            </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                      {stock.orderUV - -0.1 * stock.orderUV}
+                    </td>
 
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                              {stock.orderUV}
-                            </td>
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                      {stock.orderUV}
+                    </td>
 
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                              {stock.orderUV - 0.1 * stock.orderUV}
-                            </td>
-                          </>
-                        ); 
-                       }
-                    })()} 
+                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                      {stock.orderUV - 0.1 * stock.orderUV}
+                    </td>
                   </tr>
                 ))}
             </tbody>
