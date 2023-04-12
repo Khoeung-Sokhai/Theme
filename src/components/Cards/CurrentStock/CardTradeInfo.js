@@ -108,7 +108,7 @@ export default function CardTradeInfo() {
                 Time
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -116,7 +116,7 @@ export default function CardTradeInfo() {
                 Trade Price
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -124,7 +124,7 @@ export default function CardTradeInfo() {
                 Change
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -132,7 +132,7 @@ export default function CardTradeInfo() {
                 %Change
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -140,7 +140,7 @@ export default function CardTradeInfo() {
                 Acc. Volume
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -148,7 +148,7 @@ export default function CardTradeInfo() {
                 Acc. Value(KHR)
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -156,7 +156,7 @@ export default function CardTradeInfo() {
                 Market Cap. (Mil. KHR)<sup>(1)</sup>
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
               <tr>
@@ -164,7 +164,7 @@ export default function CardTradeInfo() {
                 Full Market Cap. (M.KHR)<sup>(2)</sup>
                 </th>
                 <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                  1,480
+                1,480
                 </td>
               </tr>
             </tbody>

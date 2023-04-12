@@ -27,17 +27,6 @@ export default function CardCurrentQuo({ color }) {
         {/* <div className="text-white rounded-t mb-0 px-4 py-3 border-0  uppercase  border-solid border-lightBlue-700 ">
           <div className="flex flex-wrap items-center">
             <div className=" relative w-full px-4 max-w-full flex-grow flex-1">
-            <table className="block w-full overflow-x-auto items-center border-collapse text-lightBlue-300 mb-3 px-6 bg-lightBlue-800  align-middle border border-solid border-lightBlue-700 py-3 text-xs border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-            <thead className="thead-light ">
-              <tr>
-                <th>Expected Price:</th>
-                <td> 122</td>
-                <h1>|</h1> 
-                <th >Expected Price:</th>
-                <td>200 </td>
-              </tr>
-            </thead>
-          </table>
               <h3 className="font-semibold text-base text-center">
                 Current Quantations <br />
                 Remaining Quantity Of Orders
