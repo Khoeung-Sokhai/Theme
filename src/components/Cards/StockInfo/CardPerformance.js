@@ -39,6 +39,7 @@ export default function CardTable({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                Performance Ratios
               </h3>
@@ -102,7 +103,7 @@ export default function CardTable({ color }) {
                  234
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
-                  O23
+                  223
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
                 111

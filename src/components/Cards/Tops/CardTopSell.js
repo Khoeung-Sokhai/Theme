@@ -55,6 +55,7 @@ export default function CardTop({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Top Sell
               </h3>

@@ -25,7 +25,7 @@ export default function CardListTrade({ color }) {
 
   useEffect(() => {
     async function fetchStock() {
-      const URL = "http://localhost:8080/api/broker-info";
+      const URL = "http://localhost:8080/api/issue-info";
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -54,6 +54,7 @@ export default function CardListTrade({ color }) {
                   "font-semibold text-lg text-left " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 List Trade
               </h3>
@@ -70,7 +71,7 @@ export default function CardListTrade({ color }) {
                   <option value="" disabled selected hidden>
                     Choose Stock
                   </option>
-                  {getStocks.map((stock) => (
+                  {getStock.map((stock) => (
                     <option key={stock.id} label={stock.issueSymbol}>
                       {" "}
                       {stock.issueNo}
@@ -119,9 +120,7 @@ export default function CardListTrade({ color }) {
               </tr>
             </thead>
             <tbody>
-              {getStocks
-              .slice(0,8)
-              .map((stock) => (
+              {getStocks.slice(0,8).map((stock) => (
                 <tr key={stock.id}>
                   <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                     {stock.issueCode}

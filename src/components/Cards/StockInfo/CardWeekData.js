@@ -54,6 +54,7 @@ export default function CardTable({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Week Data
               </h3>

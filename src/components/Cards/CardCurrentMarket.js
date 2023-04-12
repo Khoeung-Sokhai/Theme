@@ -69,6 +69,7 @@ export default function CardTable({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-yellow-400")
                 }
+                style={{color:"#ff8c00"}}
               >
                Real Time Quotation
               </h3>
@@ -219,20 +220,20 @@ export default function CardTable({ color }) {
                 <th style={{ borderRight: "1px solid gray" }} rowSpan={2} className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   {stock.issueSymbol}
                 </th>
+                <td style={{color:" #4CAF50"}} className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  100
+                </td>
+                <td style={{color:" #4CAF50"}} className="border-t-0 px-6 align-middle border-l-0  border-r-0 text-xs whitespace-nowrap p-4">
+                  2000
+                </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   100
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  haha
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  Lol
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
+                  -
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  200
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                  Haha
+                  0
                 </td>
               </tr><tr style={{ borderBottom: "1px solid gray" }}>
 
@@ -240,16 +241,16 @@ export default function CardTable({ color }) {
                     100
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    haha
+                    100
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    Lol
+                  <i class="fas fa-arrow-up"></i> 0
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                    200
+                    -
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
-                    Haha
+                    0
                   </td>
                 </tr></>
                 ))} 

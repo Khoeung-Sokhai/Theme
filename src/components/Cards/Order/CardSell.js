@@ -20,6 +20,17 @@ export default function CardSettings({ color }) {
     progress: undefined,
     theme: "light",
     });
+
+  const notifyError = () =>  toast.success('Error...', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
   
   // Reload the page after the toast message is displayed
  
@@ -112,6 +123,7 @@ export default function CardSettings({ color }) {
       })
       .catch(function (error) {
         console.log(error);
+        window.location.reload(error);
       });
      
    
@@ -132,13 +144,14 @@ export default function CardSettings({ color }) {
         <div className="bg-lightBlue-800 text-white border-lightBlue-700 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg border-0">
           <div className="rounded-t mb-0 px-6 py-6">
             <div className="text-center flex justify-between">
-              <h6 className=" text-xl font-bold uppercase">Make Order</h6>
+              <h6 className=" text-xl font-bold uppercase" >Make Order</h6>
 
               <button
                 className=" bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded bg-sky-500 hover:bg-sky-700  outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                 type="submit"
                 onClick={notify}
                 // onClick={refresh}
+
               >
                 Order
                 <ToastContainer
