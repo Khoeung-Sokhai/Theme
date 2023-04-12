@@ -34,6 +34,16 @@ export default function CardCurrentQuo({ color }) {
             </div>
           </div>
         </div> */}
+        <div className="text-white rounded-t mb-0 px-4 py-3 border-0  uppercase  border-solid border-lightBlue-700 ">
+          <div className="flex flex-wrap items-center">
+            <div className=" relative w-full px-4 max-w-full flex-grow flex-1">
+              <h3 className="font-semibold text-base text-center">
+                Current Quotations <br />
+                Remaining Quantity Of Orders
+              </h3>
+            </div>
+          </div>
+        </div>
         <div className="block w-full overflow-x-auto">
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
