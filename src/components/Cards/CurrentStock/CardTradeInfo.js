@@ -9,7 +9,7 @@ export default function CardTradeInfo() {
         <div className=" rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 className="font-semibold text-base text-center uppercase">
+              <h3   style={{color:"#ff8c00"}} className="font-semibold text-base text-center uppercase">
               Price information
               </h3>
             </div>
@@ -25,7 +25,7 @@ export default function CardTradeInfo() {
                 <th className=" text-lightBlue-300 border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                 Current Price
                 </th>
-                <td className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                <td style={{width:"0px"}} className="text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
                   1,480
                 </td>
               </tr>
@@ -92,7 +92,7 @@ export default function CardTradeInfo() {
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 className="font-semibold text-base text-center uppercase">
+              <h3   style={{color:"#ff8c00"}} className="font-semibold text-base text-center uppercase">
               Trade INFORMATION
               </h3>
             </div>
@@ -107,8 +107,8 @@ export default function CardTradeInfo() {
                 <th className=" text-lightBlue-300 border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                 Time
                 </th>
-                <td className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                1,480
+                <td style={{width:"0px"}} className="text-center border-t-0 px-6 align-middle  border border-solid border-lightBlue-700 py-3 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                1,4806
                 </td>
               </tr>
               <tr>

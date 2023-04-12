@@ -214,7 +214,7 @@ export default function CardTable({ color }) {
 
               {getStocks
                 .sort((a, b) => b.orderUV - a.orderUV)
-                .slice(0, 100)
+                .slice(0, 10)
                 .map((stock) => (
                   <tr key={stock.id}>
                     {(() => {

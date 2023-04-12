@@ -51,7 +51,7 @@ export default function Profile() {
                       <img
                         alt="..."
                         // src={require("assets/img/team-2-800x800.jpg").default}
-                        src="https://scontent.fpnh7-1.fna.fbcdn.net/v/t1.6435-9/117757565_299641694696457_3484133583315885986_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHeAr2iMg5plRkHAE7tvt3spZWC-EBBDNallYL4QEEM1rM8gEBINU6KqLYKseLJOxzq8beBe5kZd09mZ1-ideyS&_nc_ohc=1nZ1t5i_X8AAX8OiXna&_nc_ht=scontent.fpnh7-1.fna&oh=00_AfD8ZZ5f2fePCYI733rVR4-2_12PwZBgB81_SVijtydBXQ&oe=6448813E"
+                        src={require("assets/img/1.png").default}
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                       />
                     </div>
@@ -95,22 +95,25 @@ export default function Profile() {
                     </div> */}
                   </div>
                 </div>
-                <div className="text-center mt-12">
-                  <h3 className="text-4xl font-semibold leading-normal  text-blueGray-700 mb-2">
-                    Sokhai
+                <div className="text-center mt-2">
+                  <h3 className="text-2xl font-semibold leading-normal  text-blueGray-700 mb-2">
+                    Mr. Sokhai
                   </h3>
                   {/* <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
                     Los Angeles, California
                   </div> */}
-                  <div className="mb-2 mt-10">
+                  <div style={{marginLeft:"490px"}} className="flex flex-wrap" >
+                  <div className="mb-2" >
                     <i className="fas fa-briefcase mr-2 text-lg"></i>
-                    Stocks: 20 
+                    Stocks: 20  
                   </div>
-                  <div className="mb-2">
-                    <i className="fas fa-university mr-2 text-lg text-green-300"></i>
+                  <div >
+                    <i className=" ml-3 fas fa-university mr-2 text-lg text-green-300"></i>
                     Balance: 2,000,000 KHR
                   </div>
+                  </div>
+                  
                 </div>
                 <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
                   <div className="flex flex-wrap justify-center">
