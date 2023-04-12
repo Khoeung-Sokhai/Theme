@@ -28,7 +28,7 @@ export default function CardCurrentQuo({ color }) {
           <div className="flex flex-wrap items-center">
             <div className=" relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-center">
-                Current Quantations <br />
+                Current Quotations <br />
                 Remaining Quantity Of Orders
               </h3>
             </div>

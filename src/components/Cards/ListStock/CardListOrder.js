@@ -21,22 +21,22 @@ export default function CardListTrade({ color }) {
     fetchStock();
   }, []);
 
-  const [getStock, setStock] = useState([]);
+  // const [getStock, setStock] = useState([]);
 
-  useEffect(() => {
-    async function fetchStock() {
-      const URL = "http://localhost:8080/api/broker-info";
-      try {
-        const res = await axios.get(URL);
-        console.log(res.data.data);
+  // useEffect(() => {
+  //   async function fetchStock() {
+  //     const URL = "http://localhost:8080/api/broker-info";
+  //     try {
+  //       const res = await axios.get(URL);
+  //       console.log(res.data.data);
 
-        setStock(Object.values(res.data.data));
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchStock();
-  }, []);
+  //       setStock(Object.values(res.data.data));
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchStock();
+  // }, []);
 
   return (
     <>
