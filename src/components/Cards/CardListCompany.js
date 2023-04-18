@@ -8,7 +8,7 @@ export default function CardListTrade({ color }) {
 
   useEffect(() => {
     async function fetchStock() {
-      const URL = "http://localhost:8080/api/broker-info";
+      const URL = "http://localhost:8080/api/issue-info";
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
@@ -39,7 +39,7 @@ export default function CardListTrade({ color }) {
                 }
                 style={{ color: "#ff8c00" }}
               >
-                Main Board
+                List Of Companies
               </h3>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function CardListTrade({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Issue No
+                  Symbol
                 </th>
                 <th
                   className={
@@ -67,7 +67,7 @@ export default function CardListTrade({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Issue Name
+                  Company Name
                 </th>
                 <th
                   className={
@@ -77,34 +77,25 @@ export default function CardListTrade({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Quantity
+                  Date
                 </th>
               </tr>
             </thead>
             <tbody>
               {getStocks
-                .sort((a, b) => a.orderQty - b.orderQty)
+                // .sort((a, b) => a.orderQty - b.orderQty)
                 .slice(0, 10)
                 .map((stock) => (
                   <tr key={stock.id}>
-                    {(() => {
-                      if (stock.accountNo == 1) {
-                        return (
-                          <>
-                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
-                              {stock.issueCode}
-                            </td>
-                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
-                              {stock.issueSymbol}
-                            </td>
-
-                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
-                              {stock.orderQty}
-                            </td>
-                          </>
-                        );
-                      }
-                    })()}
+                    <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
+                       {stock.issueSymbol}
+                    </td>
+                    <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
+                       {stock.issueName}
+                    </td>
+                    <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
+                      {stock.issueDate}
+                    </td>
                   </tr>
                 ))}
             </tbody>
