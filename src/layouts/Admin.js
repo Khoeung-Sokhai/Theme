@@ -47,6 +47,7 @@ export default function Admin() {
           
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/" exact component={CurrentMarket} />
+            <Route path="/admin/CurrentMarket" exact component={CurrentMarket} />
             <Route path="/admin/CurrentStock" exact component={CurrentStock} />
             <Route path="/admin/StockInfo" exact component={StockInfo} />
             <Route path="/admin/Tops" exact component={Tops} />
@@ -60,7 +61,6 @@ export default function Admin() {
             <Route path="/admin/about-us" exact component={AboutUs} />
             <Route path="/admin/contact-us" exact component={ContactUs} />
             <Route path="/admin/Company" exact component={ListCompany} />
-          
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />

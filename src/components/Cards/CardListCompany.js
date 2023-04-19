@@ -83,7 +83,7 @@ export default function CardListTrade({ color }) {
             </thead>
             <tbody>
               {getStocks
-                // .sort((a, b) => a.orderQty - b.orderQty)
+                .sort((a, b) => new Date(a.issueDate) - new Date(b.issueDate))
                 .slice(0, 10)
                 .map((stock) => (
                   <tr key={stock.id}>

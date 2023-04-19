@@ -93,7 +93,7 @@ export default function CardSettings({ color }) {
     e.preventDefault();
     var data = JSON.stringify({
       orderUV: orderUV,
-      accountNo: "000001",
+      accountNo: "1",
       orderQty: orderQty,
       originalOrderNo: "1",
       brokerId: brokerId,
@@ -286,7 +286,7 @@ export default function CardSettings({ color }) {
                     Quantity
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className=" text-center border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     // defaultValue="Lucky"
                     onChange={(e) => setOrderQty(e.target.value)}
@@ -305,7 +305,7 @@ export default function CardSettings({ color }) {
                     Price UV
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="text-center border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     // defaultValue="Lucky"
                     onChange={(e) => setOrderUV(e.target.value)}

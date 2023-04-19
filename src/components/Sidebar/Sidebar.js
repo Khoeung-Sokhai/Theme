@@ -94,12 +94,12 @@ export default function Sidebar() {
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
-                  to="/"
+                  to="/admin/CurrentMarket"
                 >
                   <i
                     className={
                       "fas fa-store mr-2 text-sm " +
-                      (window.location.href.indexOf("/") !== -1
+                      (window.location.href.indexOf("/admin/CurrentMarket") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
@@ -270,7 +270,7 @@ export default function Sidebar() {
                 >
                   <i
                     className={
-                      "fas fa-arrow-up mr-2 text-sm " +
+                      "fas fa-building mr-2 text-sm " +
                       (window.location.href.indexOf("/admin/Company") !== -1
                         ? "opacity-75"
                         : "text-blueGray-300")

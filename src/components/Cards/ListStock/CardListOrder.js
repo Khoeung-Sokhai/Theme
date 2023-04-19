@@ -122,13 +122,13 @@ export default function CardListTrade({ color }) {
             <tbody>
               {getStocks.slice(0,8).map((stock) => (
                 <tr key={stock.id}>
-                  <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
+                  <td className=" py-3 border-l-0 border-t-0 text-sm font-medium text-gray-900 border border-solid border-lightBlue-700 dark:text-gray-800 text-center">
                     {stock.issueCode}
                   </td>
-                  <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
-                    {/* {stock.time} */}Sokhai
+                  <td className="py-3 border-l-0 border-l-0 border-t-0 border border-solid border-lightBlue-700 text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
+                    {stock.issueSymbol}
                   </td>
-                  <td className="text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
+                  <td className="py-3 border-l-0 border-l-0 border-t-0  border border-solid border-lightBlue-700 text-sm font-medium text-gray-900 dark:text-gray-800 text-center">
                     {stock.orderQty}
                   </td>
                 </tr>
