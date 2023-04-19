@@ -54,6 +54,7 @@ export default function CardListTrade({ color }) {
                   "font-semibold text-lg text-left " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 List Order
               </h3>

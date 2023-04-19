@@ -19,10 +19,8 @@ export default function CardTable({ color }) {
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
-        
-          setStocks(Object.values(res.data.data));
-        
-        
+
+        setStocks(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
       }
@@ -46,6 +44,7 @@ export default function CardTable({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Base Price
               </h3>
@@ -94,20 +93,29 @@ export default function CardTable({ color }) {
             <tbody>
               {getStocks
                 .sort((a, b) => b.orderNo - a.orderNo)
-                
+                .slice(1,2)
                 .map((stock) => (
                   <tr key={stock.id}>
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                      {stock.orderUV - -0.1 * stock.orderUV}
-                    </td>
+                    
+                    {(() => {
+                      if (stock.orderDt == ytd.toISOString().substring(0, 10)) {
+                        return (
+                          <>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV - -0.1 * stock.orderUV}
+                            </td>
 
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                      {stock.orderUV}
-                    </td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV}
+                            </td>
 
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
-                      {stock.orderUV - 0.1 * stock.orderUV}
-                    </td>
+                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-base whitespace-nowrap p-4 text-center">
+                              {stock.orderUV - 0.1 * stock.orderUV}
+                            </td>
+                          </>
+                        );
+                      }
+                    })()}
                   </tr>
                 ))}
             </tbody>
@@ -128,6 +136,7 @@ export default function CardTable({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Show Data
               </h3>
@@ -183,7 +192,7 @@ export default function CardTable({ color }) {
             <tbody>
               {getStocks
                 .sort((a, b) => b.orderUV - a.orderUV)
-                .slice(0, 100)
+                .slice(0, 5)
                 .map((stock) => (
                   <tr key={stock.id}>
                     {(() => {
@@ -205,7 +214,7 @@ export default function CardTable({ color }) {
 
               {getStocks
                 .sort((a, b) => b.orderUV - a.orderUV)
-                .slice(0, 100)
+                .slice(0, 10)
                 .map((stock) => (
                   <tr key={stock.id}>
                     {(() => {

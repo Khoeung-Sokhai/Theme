@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // components
 export default function CardBalance() {
   const [balance, setBalance] = useState(0);
@@ -22,24 +22,23 @@ export default function CardBalance() {
   //   }
   // };
 
-
   const [getBal, setBal] = useState([]);
-  
+
   const deposit = (event) => {
     event.preventDefault();
     const amount = Number(event.target.elements.amount.value);
     setBalance(balance + amount);
-    event.target.elements.amount.value = '';
+    event.target.elements.amount.value = "";
   };
 
   const withdraw = (event) => {
     event.preventDefault();
     const amount = Number(event.target.elements.amount.value);
     if (balance - amount < 0) {
-      alert('Insufficient funds');
+      alert("Insufficient funds");
     } else {
       setBalance(balance - amount);
-      event.target.elements.amount.value = '';
+      event.target.elements.amount.value = "";
     }
   };
   useEffect(() => {
@@ -63,59 +62,83 @@ export default function CardBalance() {
         <div className="text-white rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
             <div className=" relative w-full px-4 max-w-full flex-grow flex-1 text-center">
-             <h1>Account Balance: {balance}</h1><br />
-             <form onSubmit={deposit}>
-                 <label htmlFor="amount">Deposit Amount:</label>
-                   <input type="number" id="amount" name="amount" style={{color:'black',borderRadius:'15px',height:'30px'}}/>
-                   <button style={{backgroundColor:'green', borderRadius:'5px'}} type="submit">Deposit</button>
-             </form><br />
-             <form onSubmit={withdraw}>
+              <h1>Account Balance: {balance}</h1>
+              <br />
+              <form onSubmit={deposit}>
+                <label htmlFor="amount">Deposit Amount:</label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  style={{
+                    color: "black",
+                    borderRadius: "10px",
+                    height: "40px",
+                    marginLeft:"25px"
+                  }}
+                />
+                 <button style={{backgroundColor:"green", height:"40px",width:"115px"}} type="submit" className="ml-2 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                 Deposit
+                </button>
+              </form>
+              <br />
+              <form onSubmit={withdraw}>
                 <label htmlFor="amount">Withdraw Amount:</label>
-                 <input type="number" id="amount" name="amount" style={{color:'black',borderRadius:'15px',height:'30px'}}/>
-                 <button style={{backgroundColor:'red', borderRadius:'5px',height:'30px'}} type="submit">Withdraw</button>
-             </form>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  style={{
+                    color: "black",
+                    borderRadius: "10px",
+                    height: "40px",
+                    marginLeft:"10px"
+                  }}
+                />
+                {/* <button style={{backgroundColor:'red', borderRadius:'5px',height:'30px'}} type="submit">Withdraw</button> */}
+                <button style={{backgroundColor:"red", height:"40px"}} type="submit" className="ml-2 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Withdraw
+                </button>
+              </form>
             </div>
           </div>
         </div>
-        <div className="block w-full overflow-hidden">
+        <hr style={{width:"450px", marginLeft:"auto",marginRight:"auto"}} className="mt-2 border-b-1 border-blueGray-300 " />
+        <div className="block w-full overflow-hidden mt-4">
           {/* Projects table */}
           <table className="items-center w-full bg-transparent border-collapse">
             <thead className="thead-light">
-            
               <tr>
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
-                Date
+                  Date
                 </th>
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
-                ACCOUNT №
+                  Balance
                 </th>
                 <th className="px-6 bg-lightBlue-800 text-lightBlue-300 align-middle border border-solid border-lightBlue-700 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
-                Balance
+                  Status
                 </th>
-               
               </tr>
-              
             </thead>
             <tbody>
-            {getBal.slice(0, 14).map((bal)=> (
-              <tr>
-                <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {bal.date}
-                </td>
-                <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {bal.account_no}
-                </td>
-                <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
-                {bal.balance} &#6107; 
-                  {/* <i className="fas fa-arrow-up mr-2"></i>  */}
-                </td>
-              </tr>
+              {getBal
+              .sort((a, b) => new Date(b.date) - new Date(a.date))
+              .slice(0, 14).map((bal) => (
+                <tr>
+                  <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                    {bal.date}
+                  </td>
+                  <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                    {bal.balance} &#6107;
+                  </td>
+                  <td style={{color:" #4CAF50"}} className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 ">
+                  {bal.status}
+                    {/* <i className="fas fa-arrow-up mr-2"></i>  */}
+                  </td>
+                </tr>
               ))}
-              
-            
             </tbody>
           </table>
-         
         </div>
       </div>
     </>

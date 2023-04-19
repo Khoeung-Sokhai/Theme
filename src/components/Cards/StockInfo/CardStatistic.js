@@ -33,12 +33,13 @@ export default function CardTable({ color }) {
       >
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div className="relative w-full px-4 max-w-full flex-grow flex-1 uppercase">
               <h3
                 className={
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Annual Trading Statistics
               </h3>
@@ -148,7 +149,7 @@ export default function CardTable({ color }) {
             <tbody>
               <tr>
                 <td className="text-orange-500 border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                2019
+                2020
                 </td>
                 <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
                  12
@@ -179,7 +180,7 @@ export default function CardTable({ color }) {
               </tr>
               <tr>
                 <td className="text-orange-500 border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                2020
+                2021
                 </td>
                 <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
                  121
@@ -210,7 +211,7 @@ export default function CardTable({ color }) {
               </tr>
               <tr>
                 <td  className=" text-orange-500 border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
-                2021
+                2022
                 </td>
                 <td className=" border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
                  112

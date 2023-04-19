@@ -24,10 +24,20 @@ export default function CardCurrentQuo({ color }) {
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 shadow-2xl rounded-lg">
-        <div className="text-white rounded-t mb-0 px-4 py-3 border-0  uppercase  border-solid border-lightBlue-700 ">
+        {/* <div className="text-white rounded-t mb-0 px-4 py-3 border-0  uppercase  border-solid border-lightBlue-700 ">
           <div className="flex flex-wrap items-center">
             <div className=" relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-center">
+                Current Quotations <br />
+                Remaining Quantity Of Orders
+              </h3>
+            </div>
+          </div>
+        </div> */}
+        <div className="text-white rounded-t mb-0 px-4 py-3 border-0  uppercase  border-solid border-lightBlue-700 ">
+          <div className="flex flex-wrap items-center">
+            <div className=" relative w-full px-4 max-w-full flex-grow flex-1">
+              <h3   style={{color:"#ff8c00"}} className="font-semibold text-base text-center">
                 Current Quotations <br />
                 Remaining Quantity Of Orders
               </h3>

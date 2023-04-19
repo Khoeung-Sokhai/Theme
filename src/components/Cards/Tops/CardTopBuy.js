@@ -55,6 +55,7 @@ export default function CardTop({ color }) {
                   "font-semibold text-lg " +
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
+                style={{color:"#ff8c00"}}
               >
                 Top Buy
               </h3>
@@ -75,6 +76,7 @@ export default function CardTop({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
+
                 >
                  Stock
                 </th>
