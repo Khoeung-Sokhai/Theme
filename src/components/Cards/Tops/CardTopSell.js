@@ -58,6 +58,7 @@ export default function CardTop({ color }) {
                 style={{color:"#ff8c00"}}
               >
                 Top Sell
+                
               </h3>
              
             </div>
@@ -76,6 +77,7 @@ export default function CardTop({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
+
                 >
                  Stock
                 </th>
@@ -99,6 +101,16 @@ export default function CardTop({ color }) {
                 >
                   Quality
                 </th>
+                <th
+                  className={
+                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >
+                  Percent
+                </th>
                
                
               </tr>
@@ -111,14 +123,17 @@ export default function CardTop({ color }) {
                       if (stock.orderType == 1) {
                         return (
                           <>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
                               {stock.issueSymbol}
                             </td>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
                               {stock.orderQty}
                             </td>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs  whitespace-nowrap p-4">
+                            <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
                               {stock.orderUV}
+                            </td>
+                            <td className="text-emerald-500 text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
+                              80%
                             </td>
                           </>
                         );

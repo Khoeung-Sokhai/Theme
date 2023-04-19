@@ -1,3 +1,4 @@
+import UserDropdown from "components/Dropdowns/UserDropdown";
 import React from "react";
 import { Link } from "react-router-dom";
 // import UserDropdown from "components/Dropdowns/UserDropdown.js";
@@ -34,12 +35,14 @@ export default function Navbar() {
             className=" md:block  md:pb-2 text-blueGray-600 mr-0  whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            
-                      <img style={{height:"50px"}}
+            {/* <img style={{height:"50px"}}
                         alt="..."
                         src={"https://cdn-icons-png.flaticon.com/128/2349/2349057.png"}
                         className="shadow-xl rounded-full  align-middle border-none "
-                      />
+                      /> */}
+            
+              <UserDropdown />
+
           </Link>
         </div>
       </nav>

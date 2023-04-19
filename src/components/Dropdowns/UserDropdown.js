@@ -1,5 +1,6 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
+import { Link } from "react-router-dom";
 
 const UserDropdown = () => {
   // dropdown props
@@ -17,69 +18,71 @@ const UserDropdown = () => {
   };
   return (
     <>
-      <a
+      <Link
         className="text-blueGray-500 block"
-        href="#pablo"
+        href="/"
         ref={btnDropdownRef}
         onClick={(e) => {
           e.preventDefault();
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        <div className="items-center flex">
+        <div className="items-center flex ml-3">
           <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
             <img
               alt="..."
-              className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("assets/img/team-1-800x800.jpg").default}
+              className=" w-full rounded-full align-middle border-none shadow-lg"
+              src={require("assets/img/1.png").default}
             />
           </span>
         </div>
-      </a>
+      </Link>
       <div
         ref={popoverDropdownRef}
+        style={{backgroundColor:"rgb(56 189 248)"}}
         className={
           (dropdownPopoverShow ? "block " : "hidden ") +
-          "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+          " text-base z-50 float-center py-2 list-none text-center rounded shadow-lg min-w-full" 
+          
         }
       >
-        <a
-          href="#pablo"
+        <Link
+         to="/auth/login"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-white text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
           }
-          onClick={(e) => e.preventDefault()}
+          
         >
-          Action
-        </a>
-        <a
-          href="#pablo"
+          Login
+        </Link>
+        <Link
+          to="/auth/register"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white"
           }
-          onClick={(e) => e.preventDefault()}
+          
         >
-          Another action
-        </a>
-        <a
-          href="#pablo"
+          Sign Up
+        </Link>
+        <Link
+          to="/admin/Setting"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white"
           }
-          onClick={(e) => e.preventDefault()}
+          
         >
-          Something else here
-        </a>
+          Setting
+        </Link>
         <div className="h-0 my-2 border border-solid border-blueGray-100" />
-        <a
-          href="#pablo"
+        <Link
+          to="/auth/logOut"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white"
           }
-          onClick={(e) => e.preventDefault()}
+          
         >
-          Seprated link
-        </a>
+          LogOut
+        </Link>
       </div>
     </>
   );

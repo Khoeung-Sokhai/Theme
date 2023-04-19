@@ -244,7 +244,7 @@ export default function CardTable({ color }) {
                     100
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i class="fas fa-arrow-up"></i> 0
+                  <i className="fas fa-arrow-up text-emerald-500 mr-1" />0
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
                     -

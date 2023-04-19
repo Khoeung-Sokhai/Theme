@@ -27,6 +27,7 @@ import ListStock from "views/admin/ListStock.js";
 import Loading from "components/Cards/loading.js";
 import AboutUs from "views/admin/AboutUs.js";
 import ContactUs from "views/admin/ContactUs.js";
+import ListCompany from "views/admin/ListCompany.js";
 
 // import b from "../assets/img/background.jpg";
 
@@ -46,6 +47,7 @@ export default function Admin() {
           
             <Route path="/admin/tables" exact component={Tables} />
             <Route path="/" exact component={CurrentMarket} />
+            <Route path="/admin/CurrentMarket" exact component={CurrentMarket} />
             <Route path="/admin/CurrentStock" exact component={CurrentStock} />
             <Route path="/admin/StockInfo" exact component={StockInfo} />
             <Route path="/admin/Tops" exact component={Tops} />
@@ -58,7 +60,7 @@ export default function Admin() {
             <Route path="/admin/ListStock" exact component={ListStock} />
             <Route path="/admin/about-us" exact component={AboutUs} />
             <Route path="/admin/contact-us" exact component={ContactUs} />
-          
+            <Route path="/admin/Company" exact component={ListCompany} />
             <Redirect from="/admin" to="/admin/dashboard" />
           </Switch>
           <FooterAdmin />
