@@ -49,6 +49,16 @@ export default function CardListTrade({ color }) {
           <table className="items-center w-full bg-transparent border-collapse">
             <thead className="thead-light">
               <tr>
+              <th
+                  className={
+                    "  px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
+                    (color === "light"
+                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
+                  }
+                >
+                  Issue Code
+                </th>
                 <th
                   className={
                     "  px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center " +
@@ -87,6 +97,9 @@ export default function CardListTrade({ color }) {
                 .slice(0, 10)
                 .map((stock) => (
                   <tr key={stock.id}>
+                    <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
+                       {stock.issueCode}
+                    </td>
                     <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
                        {stock.issueSymbol}
                     </td>
