@@ -32,7 +32,7 @@ export default function CurrentStock() {
           <CardHistoryPrice />
           {/* <CardLineChart /> */}
           {/* <CardBarChart /> */}
-          <CardMix />
+          {/* <CardMix /> */}
         </div>
         <div className="w-full xl:w-4/12 px-4">
 
