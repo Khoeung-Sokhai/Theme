@@ -106,8 +106,6 @@ export default function CardTable({ color }) {
             </thead>
             <tbody>
               <tr>
-               
-                
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-center text-xs whitespace-nowrap p-4">
                   2000
                 </td>
@@ -124,7 +122,6 @@ export default function CardTable({ color }) {
                   111
                 </td>
               </tr>
-              
             </tbody>
           </table>
         </div>
@@ -132,11 +129,9 @@ export default function CardTable({ color }) {
     </>
   );
 }
-
 CardTable.defaultProps = {
   color: "light",
 };
-
 CardTable.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

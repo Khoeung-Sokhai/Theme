@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 // components
-
 export default function CardListTrade({ color }) {
   const [getStocks, setStocks] = useState([]);
-
   useEffect(() => {
     async function fetchStock() {
       const URL = "http://localhost:8080/api/broker-info";
       try {
         const res = await axios.get(URL);
         console.log(res.data.data);
-
         setStocks(Object.values(res.data.data));
       } catch (error) {
         console.log(error);
@@ -37,7 +34,6 @@ export default function CardListTrade({ color }) {
   //   }
   //   fetchStock();
   // }, []);
-
   return (
     <>
       <div
@@ -64,7 +60,6 @@ export default function CardListTrade({ color }) {
                 <select
                   className=" text-center uppercase border-0 px-3 py-3 placeholder-blueGray-300 text-black  bg-white rounded text-xs shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   // value={brokerId}
-
                   // onChange={(e) => setBrokerId(e.target.value)}
                   // value={brokerId}
                 >

@@ -43,6 +43,7 @@ export default function CardSettings({ color }) {
   const [orderType, setOrderType] = useState([]);
   const [brokerId, setBrokerId] = useState([]);
   const [getStocks, setStocks] = useState([]);
+  const [remainQty, setRemain] = useState([]);
   useEffect(() => {
     async function fetchStock() {
       const URL = "http://localhost:8080/api/issue-info";
@@ -93,13 +94,14 @@ export default function CardSettings({ color }) {
     e.preventDefault();
     var data = JSON.stringify({
       orderUV: orderUV,
-      accountNo: "1",
+      accountNo: "A00001",
       orderQty: orderQty,
       originalOrderNo: "1",
       brokerId: brokerId,
       orderDate: date,
       issueCode: issueCode,
       orderType: orderType,
+      remainQty: orderQty,
 
     });
 

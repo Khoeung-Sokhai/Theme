@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import ReactApexChart from "react-apexcharts";
-
-
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -267,13 +265,8 @@ export default class App extends Component {
                     }
                 }
             },
-
-
         };
     }
-
-
-
     render() {
         return (
             <div className="relative flex flex-col min-w-0 break-words bg-lightBlue-900 w-full mb-6 sshadow-2xl rounded-lg">
@@ -287,7 +280,6 @@ export default class App extends Component {
                     </div>
                 </div>
                 <div className="bg-white block w-full overflow-hidden">
-
                     <div id="chart">
                         <ReactApexChart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
                     </div>

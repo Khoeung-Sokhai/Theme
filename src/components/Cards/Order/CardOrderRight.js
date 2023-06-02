@@ -186,7 +186,9 @@ export default function CardTable({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                ></th>
+                >
+                  Buy
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-
 // components
-
 export default function CardCurrentQuo({ color }) {
   const [getQuo, setQuo] = useState([]);
-
   useEffect(() => {
     async function fetchStock() {
       const URL = "http://localhost:8080/api/broker-info";

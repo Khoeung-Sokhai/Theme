@@ -13,7 +13,7 @@ import CardMix from "components/Cards/CardMix";
 export default function CurrentStock() {
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mt-4">
         <div className="w-full xl:w-6/12 mb-12 xl:mb-0 px-4">
           {/* <CardLineChart/> */}
           {/* <CardRecent /> */}
@@ -35,7 +35,7 @@ export default function CurrentStock() {
           {/* <CardMix /> */}
         </div>
         <div className="w-full xl:w-4/12 px-4">
-
+ 
         </div>
       </div>
     </>

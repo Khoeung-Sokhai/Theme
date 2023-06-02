@@ -1,7 +1,5 @@
 import React from "react";
-
 // components
-
 export default function CardTradeInfo() {
   return (
     <>
@@ -102,9 +100,8 @@ export default function CardTradeInfo() {
         </div>
         <hr />
         <table className="items-center w-full bg-transparent border-collapse">
-            <thead className="thead-light">
-
-            </thead>
+            {/* <thead className="thead-light">
+            </thead> */}
             <tbody>
               <tr>
                 <th className=" text-lightBlue-300 border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4 text-left">

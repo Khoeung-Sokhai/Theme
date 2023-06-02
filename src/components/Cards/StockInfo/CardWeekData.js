@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 // components
-
 export default function CardTable({ color }) {
   // const [getStocks, setStocks] = useState([]);
 
@@ -22,7 +21,6 @@ export default function CardTable({ color }) {
   //   fetchStock();
   // }, []);
   const [getStocks, setStocks] = useState([]);
-
   useEffect(() => {
     async function fetchStock() {
       const URL = "http://localhost:8080/api/buy-info";
@@ -37,7 +35,6 @@ export default function CardTable({ color }) {
     }
     fetchStock();
   }, []);
-
   return (
     <>
       <div
@@ -125,7 +122,6 @@ export default function CardTable({ color }) {
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center">
                  12
                 </td>
-
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs text-center whitespace-nowrap p-4">
                   123
                 </td>

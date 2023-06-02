@@ -88,7 +88,7 @@ export default function CardListTrade({ color }) {
                 .map((stock) => (
                   <tr key={stock.id}>
                     {(() => {
-                      if (stock.accountNo == 1) {
+                      if (stock.accountNo == "A00001") {
                         return (
                           <>
                             <td className="text-white text-center border-t-0 px-6 align-middle border-l-0  border border-solid border-lightBlue-700 py-3 border-r-0 text-xs whitespace-nowrap p-4">
