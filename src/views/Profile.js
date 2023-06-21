@@ -97,7 +97,7 @@ export default function Profile() {
                 </div>
                 <div className="text-center mt-2">
                   <h3 className="text-2xl font-semibold leading-normal  text-blueGray-700 mb-2">
-                    Mr. Sokhai
+                    Mr. John
                   </h3>
                   {/* <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
@@ -106,11 +106,11 @@ export default function Profile() {
                   <div style={{marginLeft:"490px"}} className="flex flex-wrap" >
                   <div className="mb-2" >
                     <i className="fas fa-briefcase mr-2 text-lg"></i>
-                    Stocks: 20  
+                    Stocks: 3  
                   </div>
                   <div >
                     <i className=" ml-3 fas fa-university mr-2 text-lg text-green-300"></i>
-                    Balance: 2,000,000 KHR
+                    Balance: 1,000,000 KHR
                   </div>
                   </div>
                   
@@ -119,8 +119,17 @@ export default function Profile() {
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                        Lists Of Stocks
+                        Lists Of Stocks:
                       </p>
+                      <li>
+                      JS LAND PLC (JSL) 
+                      </li>
+                      <li>
+                      ACLEDA Bank Plc. (ABC)
+                      </li>
+                      <li>
+                      Phnom Penh SEZ Plc. (PPSP)
+                      </li>
                       <p>
                         History Hold
                       </p>
